@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d16" />
+    <title>Fraud Detection with LLMs | Nana Boateng</title>
+    <meta name="description" content="How to use LLM-extracted context as a bounded fraud signal while preserving established controls and human review." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand"><div class="brand-mark">NB</div><div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div></div>
+        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a><a href="../pages/about.html">About</a><a href="../pages/expertise.html">Expertise</a><a href="index.html">Blog</a><a href="../pages/contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+        <a class="btn btn-primary nav-cta" href="../pages/contact.html">Contact</a>
+      </div>
+    </header>
+    <main id="main-content">
+      <header class="article-header">
+        <div class="article-wrap">
+          <a class="eyebrow" href="index.html">← Back to the blog</a>
+          <div class="eyebrow">Fraud detection · 8 min read</div>
+          <h1>Fraud detection with LLMs: signals, safeguards, and human review</h1>
+          <p class="article-meta">Use language models to add context to a risk workflow—not to make unreviewable decisions.</p>
+        </div>
+      </header>
+      <article class="article-wrap article-content">
+        <p>Fraud teams already work with structured signals such as transaction velocity, device history, and account age. LLMs can help make unstructured evidence—merchant text, case notes, or customer-submitted narratives—more searchable and consistently categorized. Data engineering moves this evidence through secure, observable pipelines; data science evaluates whether it adds signal; machine learning engineering integrates it into a monitored workflow. LLM features remain one source of evidence alongside conventional detection systems.</p>
+        <h2>Put the LLM in a bounded role</h2>
+        <p>Have the model return a constrained schema: a small set of supported signal labels, confidence, and a short evidence reference. Validate the response, retain the source and model version, and ensure confidence is calibrated before it affects downstream ranking. Build data quality checks into ingestion, store prompt/model versions, and provide safe retries and fallbacks. Avoid sending unnecessary personal data, and do not allow arbitrary model-generated prose to trigger an adverse action.</p>
+        <ul>
+          <li>Preserve the existing model score and policy rules as the baseline.</li>
+          <li>Measure whether language-derived signals improve recall at an acceptable review volume.</li>
+          <li>Route ambiguous or high-impact cases to trained human investigators.</li>
+          <li>Monitor drift, extraction failures, subgroup performance, and analyst overrides.</li>
+        </ul>
+        <h2>A transparent review-routing example</h2>
+        <p>This compact Python example uses synthetic records and pre-extracted LLM signals. It caps the contribution of the language signal and only flags a case for human review; it does not approve or decline a transaction.</p>
+        <div class="code-example">
+          <p class="code-label">Python</p>
+          <pre><code>transactions = [
+    {"id": "tx-201", "base_risk": 0.82,
+     "llm_signal": "account_takeover", "confidence": 0.92},
+    {"id": "tx-202", "base_risk": 0.69,
+     "llm_signal": "none", "confidence": 0.98},
+]
+
+def route_for_review(transaction):
+    supported = transaction["llm_signal"] == "account_takeover"
+    llm_adjustment = min(0.10, transaction["confidence"] * 0.10) if supported else 0.0
+    combined_risk = min(1.0, transaction["base_risk"] + llm_adjustment)
+    route = "human_review" if combined_risk &gt;= 0.80 else "standard_queue"
+    return combined_risk, route
+
+for transaction in transactions:
+    score, route = route_for_review(transaction)
+    print(f'{transaction["id"]}: risk={score:.2f}, route={route}')</code></pre>
+          <div class="code-output">
+            <p class="code-label">Output</p>
+            <pre><code>tx-201: risk=0.91, route=human_review
+tx-202: risk=0.69, route=standard_queue</code></pre>
+          </div>
+        </div>
+        <p>The language-derived signal adds at most 0.10 to the synthetic baseline score, and the result only changes the review route. These illustrative numbers are not trained model outputs or recommended production thresholds. In a real system, the contribution, threshold, and confidence calibration must be selected using representative historical data and operational costs.</p>
+        <h2>Measure impact before expanding the role</h2>
+        <p>Evaluate on a time-based holdout to reflect changing fraud patterns and avoid future information leaking into training. Compare baseline and augmented systems on precision-recall metrics, investigator workload, time-to-review, and confirmed loss. Audit performance across relevant customer and transaction slices, and use a controlled rollout with a clear fallback when the LLM is unavailable or returns invalid output. Operational monitoring should cover data freshness, extraction errors, model and prompt versions, drift, latency, and cost.</p>
+        <div class="article-callout"><p><strong>Bottom line:</strong> use LLMs to surface and organize contextual clues. Keep high-impact decisions governed by validated models, explicit policy, and accountable human review.</p></div>
+        <div class="article-nav"><a class="btn btn-secondary" href="feature-engineering-with-llms.html">← Feature engineering with LLMs</a><a class="btn btn-primary" href="index.html">All blog posts</a></div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><div class="brand footer-brand"><div class="brand-mark">NB</div><div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div></div><p>Building practical data and AI systems from reliable foundations through production.</p></div>
+        <div><h4>Contact</h4><ul><li><a href="../pages/contact.html">Send a message</a></li></ul></div>
+        <div><h4>Focus</h4><ul><li>Data science</li><li>Data engineering</li><li>Machine learning & generative AI</li></ul></div>
+      </div>
+      <div class="container footer-bottom"><p>© <span id="year"></span> Nana Boateng. All rights reserved.</p></div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

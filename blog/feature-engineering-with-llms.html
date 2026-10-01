@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d16" />
+    <title>Feature Engineering with LLMs | Nana Boateng</title>
+    <meta name="description" content="A practical, leakage-aware pattern for turning transaction text into validated machine-learning features with an LLM and a reliable data pipeline." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand"><div class="brand-mark">NB</div><div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div></div>
+        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a><a href="../pages/about.html">About</a><a href="../pages/expertise.html">Expertise</a><a href="index.html">Blog</a><a href="../pages/contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+        <a class="btn btn-primary nav-cta" href="../pages/contact.html">Contact</a>
+      </div>
+    </header>
+    <main id="main-content">
+      <header class="article-header">
+        <div class="article-wrap">
+          <a class="eyebrow" href="index.html">← Back to the blog</a>
+          <div class="eyebrow">Feature engineering · 7 min read</div>
+          <h1>From messy text to useful features: a practical LLM pattern</h1>
+          <p class="article-meta">Use language models to structure context—not to skip validation, domain knowledge, or careful evaluation.</p>
+        </div>
+      </header>
+      <article class="article-wrap article-content">
+        <p>Transaction data often arrives with a useful signal trapped in text: a merchant descriptor, support note, or short purchase memo. An LLM can map that messy language into a small, typed schema that a conventional model can consume. Think of it as an extraction stage, not an oracle. Data science defines which signals matter and how to measure them; data engineering makes the extraction repeatable; machine learning engineering integrates the validated features into a dependable model workflow.</p>
+        <h2>Start with a narrow feature contract</h2>
+        <p>Ask for fields that have a clear downstream purpose, such as a broad merchant category or purchase context. Define allowed values, require structured output, and validate every response before it enters a training table. In the data pipeline, retain source IDs, timestamps, extraction status, and model or prompt version so outputs can be traced, retried, and audited. For larger workloads, batch requests, handle rate limits, and make writes idempotent.</p>
+        <p>For sensitive data, minimize what is sent to the model, remove direct identifiers, and use an approved deployment. Treat missing, malformed, or low-confidence extraction as missing data; never silently turn an invalid response into a trustworthy-looking feature. Track parse failures, latency, cost, and feature freshness alongside model quality.</p>
+        <h2>Keep preprocessing on the right side of the split</h2>
+        <p>Here is a small, dependency-free example. The LLM extraction is represented by already-validated structured responses; this code then makes a chronological train/test split and learns the category vocabulary from training data only.</p>
+        <div class="code-example">
+          <p class="code-label">Python</p>
+          <pre><code>from datetime import date
+
+rows = [
+    {"day": "2025-01-01", "amount": 18.50, "category": "dining", "recurring": False},
+    {"day": "2025-01-02", "amount": 42.00, "category": "grocery", "recurring": False},
+    {"day": "2025-01-03", "amount": 9.25, "category": "dining", "recurring": True},
+    {"day": "2025-01-04", "amount": 63.00, "category": "grocery", "recurring": False},
+    {"day": "2025-01-05", "amount": 120.00, "category": "travel", "recurring": False},
+    {"day": "2025-01-06", "amount": 15.00, "category": "dining", "recurring": False},
+]
+
+rows.sort(key=lambda row: date.fromisoformat(row["day"]))
+cut = int(len(rows) * 0.67)
+train, test = rows[:cut], rows[cut:]
+known_categories = {row["category"] for row in train}
+
+def make_features(row):
+    category = row["category"] if row["category"] in known_categories else "other"
+    return {
+        "amount": row["amount"],
+        "is_recurring": int(row["recurring"]),
+        f"category_{category}": 1,
+    }
+
+print(f"train={len(train)}, test={len(test)}")
+print(f"training categories={sorted(known_categories)}")
+print(make_features(test[0]))</code></pre>
+          <div class="code-output">
+            <p class="code-label">Output</p>
+            <pre><code>train=4, test=2
+training categories=['dining', 'grocery']
+{'amount': 120.0, 'is_recurring': 0, 'category_other': 1}</code></pre>
+          </div>
+        </div>
+        <p>The unseen <code>travel</code> value is mapped to an explicit fallback instead of teaching the encoder about test data. In a production pipeline, fit the encoder and any imputation or scaling steps only on the training fold, then reuse those fitted transformations unchanged on validation and test data. For a non-temporal use case, use a split that reflects the deployment setting and prevents entity or label leakage.</p>
+        <h2>Evaluate the added signal, not the novelty</h2>
+        <p>Compare against a baseline that uses the original structured fields. Use the same split for both models and check metrics aligned to the decision—such as precision-recall performance when positive cases are rare. Review errors by merchant, time period, and customer segment; extraction quality and downstream model quality are separate things to measure. In a production MLOps workflow, version the feature contract and extraction prompt, validate data distributions, and monitor for drift or upstream pipeline failures.</p>
+        <div class="article-callout"><p><strong>Practical rule:</strong> add an LLM-derived feature only when an ablation shows that it provides stable, incremental value and the feature can be monitored, reproduced, and governed.</p></div>
+        <div class="article-nav"><a class="btn btn-secondary" href="index.html">All blog posts</a><a class="btn btn-primary" href="fraud-detection-with-llms.html">Next: Fraud detection with LLMs →</a></div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><div class="brand footer-brand"><div class="brand-mark">NB</div><div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div></div><p>Building practical data and AI systems from reliable foundations through production.</p></div>
+        <div><h4>Contact</h4><ul><li><a href="../pages/contact.html">Send a message</a></li></ul></div>
+        <div><h4>Focus</h4><ul><li>Data science</li><li>Data engineering</li><li>Machine learning & generative AI</li></ul></div>
+      </div>
+      <div class="container footer-bottom"><p>© <span id="year"></span> Nana Boateng. All rights reserved.</p></div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

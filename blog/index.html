@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d16" />
+    <title>Blog | Nana Boateng</title>
+    <meta
+      name="description"
+      content="Practical articles on data science, data engineering, machine learning engineering, and generative AI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-mark">NB</div>
+          <div>
+            <span class="brand-name">Nana Boateng</span>
+            <small>Machine Learning Engineer</small>
+          </div>
+        </div>
+        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../pages/about.html">About</a>
+          <a href="../pages/expertise.html">Expertise</a>
+          <a href="index.html">Blog</a>
+          <a href="../pages/contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+        <a class="btn btn-primary nav-cta" href="../pages/contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <span class="eyebrow">The blog</span>
+          <h1>Ideas and implementation across data and AI.</h1>
+          <p>
+            Explore practical approaches to analytics, production data systems, machine learning,
+            and generative AI—from data foundations to deployed applications.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow accent">Latest articles</span>
+            <h2>Explore the ideas and the code.</h2>
+          </div>
+          <div class="blog-controls">
+            <label class="blog-search-label" for="blog-search">Search articles</label>
+            <input class="blog-search" id="blog-search" type="search" placeholder="Try “fraud” or “features”" autocomplete="off" />
+            <div class="filter-bar" role="group" aria-label="Filter articles by topic">
+              <button class="filter-button" type="button" data-blog-filter="all" aria-pressed="true">All topics</button>
+              <button class="filter-button" type="button" data-blog-filter="features" aria-pressed="false">Feature engineering</button>
+              <button class="filter-button" type="button" data-blog-filter="fraud" aria-pressed="false">Fraud detection</button>
+            </div>
+            <p class="blog-results" aria-live="polite">Showing 2 articles</p>
+          </div>
+          <div class="blog-grid">
+            <a class="post-card blog-card" data-blog-category="features" href="feature-engineering-with-llms.html">
+              <div class="meta">Feature engineering · 7 min read</div>
+              <h3>From messy text to useful features: a practical LLM pattern</h3>
+              <p>Use an LLM to structure transaction descriptions, then validate and encode its output without leaking information across data splits.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="post-card blog-card" data-blog-category="fraud" href="fraud-detection-with-llms.html">
+              <div class="meta">Fraud detection · 8 min read</div>
+              <h3>Fraud detection with LLMs: signals, safeguards, and human review</h3>
+              <p>Combine language-derived context with established risk signals while keeping decisions measurable, reviewable, and grounded in evidence.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <div class="brand-mark">NB</div>
+            <div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div>
+          </div>
+          <p>Building practical data and AI systems from reliable foundations through production.</p>
+        </div>
+        <div><h4>Contact</h4><ul><li><a href="../pages/contact.html">Send a message</a></li></ul></div>
+        <div><h4>Focus</h4><ul><li>Data science</li><li>Data engineering</li><li>Machine learning & generative AI</li></ul></div>
+      </div>
+      <div class="container footer-bottom"><p>© <span id="year"></span> Nana Boateng. All rights reserved.</p></div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
