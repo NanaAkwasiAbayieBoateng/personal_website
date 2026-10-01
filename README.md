@@ -25,3 +25,9 @@ python -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+## GitHub Actions
+
+The `Validate site` workflow runs on pushes and pull requests. It checks that
+local file links and asset references in the HTML pages point to files in the
+repository.
