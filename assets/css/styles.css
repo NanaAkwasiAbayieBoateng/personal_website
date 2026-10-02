@@ -130,6 +130,14 @@ p { margin: 0 0 1.2rem; color: var(--muted); }
 .main-nav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 1.8rem); color: var(--muted); font-size: 0.9rem; font-weight: 600; }
 .main-nav a { position: relative; padding-block: 0.5rem; transition: color 160ms ease; }
 .main-nav a:hover, .main-nav a[aria-current="page"] { color: var(--text); }
+.nav-dropdown { position: relative; }
+.nav-dropdown summary { padding-block: 0.5rem; cursor: pointer; list-style: none; transition: color 160ms ease; }
+.nav-dropdown summary::-webkit-details-marker { display: none; }
+.nav-dropdown summary::after { margin-left: 0.35rem; color: var(--secondary); content: "▾"; }
+.nav-dropdown summary:hover, .nav-dropdown[open] summary { color: var(--text); }
+.nav-dropdown-menu { position: absolute; top: calc(100% + 0.65rem); left: -0.8rem; z-index: 35; display: grid; min-width: 190px; gap: 0.15rem; padding: 0.55rem; border: 1px solid var(--border); border-radius: 14px; background: rgba(13, 20, 32, 0.98); box-shadow: var(--shadow); }
+.nav-dropdown-menu a { padding: 0.65rem 0.75rem; border-radius: 9px; white-space: nowrap; }
+.nav-dropdown-menu a:hover { background: rgba(99, 226, 196, 0.06); }
 .main-nav a[aria-current="page"]::after {
   position: absolute;
   right: 0;
@@ -451,6 +459,10 @@ p { margin: 0 0 1.2rem; color: var(--muted); }
   .main-nav a { padding: 0.75rem 0.85rem; border-radius: 10px; }
   .main-nav a:hover, .main-nav a[aria-current="page"] { background: rgba(99, 226, 196, 0.06); }
   .main-nav a[aria-current="page"]::after { display: none; }
+  .nav-dropdown summary { padding: 0.75rem 0.85rem; border-radius: 10px; }
+  .nav-dropdown summary:hover, .nav-dropdown[open] summary { background: rgba(99, 226, 196, 0.06); }
+  .nav-dropdown-menu { position: static; min-width: 0; margin: 0 0 0.35rem 0.85rem; padding: 0.25rem; border: 0; border-left: 1px solid var(--border); border-radius: 0; background: transparent; box-shadow: none; }
+  .nav-dropdown-menu a { padding: 0.6rem 0.75rem; white-space: normal; }
   .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr); gap: 2rem; }
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .program-card { min-height: 210px; }

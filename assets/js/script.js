@@ -200,7 +200,7 @@ if (contactForm) {
       `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nCompany: ${formData.get('company') || 'Not provided'}\n\n${formData.get('message')}`
     );
     const status = contactForm.querySelector('.form-status');
-    if (status) status.textContent = 'Opening a draft in your email app. Add Nana’s current email address before sending.';
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    if (status) status.textContent = 'Opening a draft addressed to unltd148@yahoo.co.uk and gucci148@gmail.com. Review and send it from your email app.';
+    window.location.href = `mailto:unltd148@yahoo.co.uk,gucci148@gmail.com?subject=${subject}&body=${body}`;
   });
 }
