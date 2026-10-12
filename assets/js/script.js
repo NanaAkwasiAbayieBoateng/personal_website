@@ -132,6 +132,7 @@ blogFilters.forEach((button) => {
 });
 
 if (blogSearch) blogSearch.addEventListener('input', updateBlogList);
+updateBlogList();
 
 const articleContent = document.querySelector('.article-content');
 if (articleContent) {

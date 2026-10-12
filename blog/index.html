@@ -7,7 +7,7 @@
     <title>Blog | Nana Boateng</title>
     <meta
       name="description"
-      content="Practical articles on data science, data engineering, machine learning engineering, and generative AI."
+      content="Articles on data science, machine learning, data engineering, and applied AI."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,16 +20,13 @@
       <div class="container nav-wrap">
         <div class="brand">
           <div class="brand-mark">NB</div>
-          <div>
-            <span class="brand-name">Nana Boateng</span>
-            <small>Machine Learning Engineer</small>
-          </div>
+          <div><span class="brand-name">Nana Boateng</span><small>Machine Learning Engineer</small></div>
         </div>
         <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
           <a href="../index.html">Home</a>
           <a href="../pages/about.html">About</a>
           <a href="../pages/expertise.html">Expertise</a>
-          <a href="index.html">Blog</a>
+          <a href="index.html" aria-current="page">Blog</a>
           <details class="nav-dropdown">
             <summary>Resources</summary>
             <div class="nav-dropdown-menu">
@@ -48,44 +45,190 @@
     <main id="main-content">
       <section class="page-hero">
         <div class="container page-hero-inner">
-          <span class="eyebrow">The blog</span>
-          <h1>Ideas and implementation across data and AI.</h1>
+          <span class="eyebrow">Ideas, research &amp; practice</span>
+          <h1>Thoughtful perspectives on data and AI.</h1>
           <p>
-            Explore practical approaches to analytics, production data systems, machine learning,
-            and generative AI—from data foundations to deployed applications.
+            A collection of practical notes on analytics, machine learning, data systems,
+            and the craft of putting ideas to work.
           </p>
         </div>
       </section>
 
       <section class="section">
-        <div class="container">
+        <div class="container blog-container">
           <div class="section-heading">
-            <span class="eyebrow accent">Latest articles</span>
-            <h2>Explore the ideas and the code.</h2>
+            <span class="eyebrow accent">The archive</span>
+            <h2>Explore the articles.</h2>
+            <p>Browse the full collection, starting with the newest writing.</p>
           </div>
           <div class="blog-controls">
             <label class="blog-search-label" for="blog-search">Search articles</label>
-            <input class="blog-search" id="blog-search" type="search" placeholder="Try “fraud” or “features”" autocomplete="off" />
-            <div class="filter-bar" role="group" aria-label="Filter articles by topic">
-              <button class="filter-button" type="button" data-blog-filter="all" aria-pressed="true">All topics</button>
-              <button class="filter-button" type="button" data-blog-filter="features" aria-pressed="false">Feature engineering</button>
-              <button class="filter-button" type="button" data-blog-filter="fraud" aria-pressed="false">Fraud detection</button>
-            </div>
-            <p class="blog-results" aria-live="polite">Showing 2 articles</p>
+            <input class="blog-search" id="blog-search" type="search" placeholder="Search by topic or title" autocomplete="off" />
+            <p class="blog-results" aria-live="polite">Showing 27 articles</p>
           </div>
-          <div class="blog-grid">
-            <a class="post-card blog-card" data-blog-category="features" href="feature-engineering-with-llms.html">
-              <div class="meta">Feature engineering · 7 min read</div>
-              <h3>From messy text to useful features: a practical LLM pattern</h3>
-              <p>Use an LLM to structure transaction descriptions, then validate and encode its output without leaking information across data splits.</p>
+          <div class="blog-grid" aria-label="Blog articles, newest first">
+            <article class="post-card blog-card" data-blog-category="language-models">
+              <div class="meta"><time datetime="2025-06-08">Jun 08, 2025</time><span>Language models</span></div>
+              <h3><a href="article.html?post=2025-06-08-Fine-Tuning-Low-Resource-Languages.md">Fine-tuning and parameter-efficient methods for low-resource languages</a></h3>
+              <p>An applied look at adapting language models to low-resource languages, with an example using Twi data.</p>
               <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
-            </a>
-            <a class="post-card blog-card" data-blog-category="fraud" href="fraud-detection-with-llms.html">
-              <div class="meta">Fraud detection · 8 min read</div>
-              <h3>Fraud detection with LLMs: signals, safeguards, and human review</h3>
-              <p>Combine language-derived context with established risk signals while keeping decisions measurable, reviewable, and grounded in evidence.</p>
+            </article>
+            <article class="post-card blog-card" data-blog-category="language-models">
+              <div class="meta"><time datetime="2025-02-10">Feb 10, 2025</time><span>Generative AI</span></div>
+              <h3><a href="article.html?post=2025-02-10-LLM_Local_Machine.md">Run large language models on your local machine</a></h3>
+              <p>Set up and run local LLMs, then explore practical configuration and performance considerations.</p>
               <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
-            </a>
+            </article>
+            <article class="post-card blog-card" data-blog-category="deployment">
+              <div class="meta"><time datetime="2024-12-12">Dec 12, 2024</time><span>Machine learning</span></div>
+              <h3><a href="article.html?post=2024-12-12-Model-Deployment-Review.md">A practical review of machine learning model deployment</a></h3>
+              <p>Review the key stages, tools, and operating considerations involved in taking models into production.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="data-science">
+              <div class="meta"><time datetime="2022-09-06">Sep 06, 2022</time><span>Data science</span></div>
+              <h3><a href="article.html?post=2022-09-06-Statistical-Methods-For-Data-Drift-Detection-and-Monitoring.md">Statistical methods for data drift detection and monitoring</a></h3>
+              <p>Understand changing data distributions and choose statistical approaches to detect and monitor drift.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="optimization">
+              <div class="meta"><time datetime="2021-08-12">Aug 12, 2021</time><span>Optimization</span></div>
+              <h3><a href="article.html?post=2021-08-12-BayesianOptimizationOptimization.md">Bayesian optimization</a></h3>
+              <p>An introduction to Bayesian optimization and popular libraries for efficient hyperparameter search.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="nlp">
+              <div class="meta"><time datetime="2021-05-04">May 04, 2021</time><span>Natural language processing</span></div>
+              <h3><a href="article.html?post=2021-05-04-Fine-Tuning-XLNet-For-Sequence-Classification.md">Fine-tuning XLNet for sequence classification</a></h3>
+              <p>Work through a transformer-based sequence classification workflow, from model setup to evaluation.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="nlp">
+              <div class="meta"><time datetime="2021-01-27">Jan 27, 2021</time><span>Natural language processing</span></div>
+              <h3><a href="article.html?post=2021-01-27-Fake-News-and-Real-News-Detection%20.md">Detecting fake and real news</a></h3>
+              <p>Build a text-classification workflow to explore how machine learning can distinguish news articles.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="deployment">
+              <div class="meta"><time datetime="2020-12-07">Dec 07, 2020</time><span>Machine learning</span></div>
+              <h3><a href="article.html?post=2020-12-07-Using%20Scikit-Learn%20Pipelines%20and%20Converting%20Them%20To%20PMML.md">Scikit-learn pipelines and PMML conversion</a></h3>
+              <p>Structure repeatable machine learning workflows with scikit-learn pipelines and convert them to PMML.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="nlp">
+              <div class="meta"><time datetime="2020-11-15">Nov 15, 2020</time><span>Natural language processing</span></div>
+              <h3><a href="article.html?post=2020-11-15-English_Twi_Neural_Machine_Translation_with_attention_Final.md">English–Twi neural machine translation with attention</a></h3>
+              <p>Explore a neural machine translation workflow for English and Twi, including an attention-based model.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="deep-learning">
+              <div class="meta"><time datetime="2020-08-17">Aug 17, 2020</time><span>Deep learning</span></div>
+              <h3><a href="article.html?post=2020-08-17-Transfer_Learning_and_Fine_tuning_withTensorFlow__Pneumonia_Classification_on_X_rays4.md">Transfer learning for pneumonia classification with TensorFlow</a></h3>
+              <p>Apply transfer learning and fine-tuning to classify chest X-rays using a TensorFlow image model.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="finance">
+              <div class="meta"><time datetime="2020-05-09">May 09, 2020</time><span>Finance</span></div>
+              <h3><a href="article.html?post=2020-05-09-Returns-On-Exchange_Traded_Funds.md">Returns on exchange-traded funds</a></h3>
+              <p>Explore exchange-traded fund returns and the different types of funds available to investors.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="fraud">
+              <div class="meta"><time datetime="2020-04-01">Apr 01, 2020</time><span>Fraud detection</span></div>
+              <h3><a href="article.html?post=2020-04-01-Cost_Sensitive_Learning_DeepLearning-For-Fraud-Detection.md">Cost-sensitive deep learning for imbalanced classification</a></h3>
+              <p>Address class imbalance in fraud detection with cost-sensitive learning and deep neural networks.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="fraud">
+              <div class="meta"><time datetime="2020-03-29">Mar 29, 2020</time><span>Fraud detection</span></div>
+              <h3><a href="article.html?post=2020-03-29-Machine-Learning-With-Imbalanced-Target-Class-Datasets.md">Machine learning with imbalanced target classes</a></h3>
+              <p>Compare practical techniques for building classifiers when the target class is heavily imbalanced.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="automation">
+              <div class="meta"><time datetime="2019-12-21">Dec 21, 2019</time><span>Machine learning</span></div>
+              <h3><a href="article.html?post=2019-12-21-Automatic%20Machine%20Learning.md">Automatic machine learning</a></h3>
+              <p>Explore automated machine learning methods and their application to a practical prediction problem.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="statistics">
+              <div class="meta"><time datetime="2019-10-15">Oct 15, 2019</time><span>Statistics · R</span></div>
+              <h3><a href="article.html?post=2019-10-15-Receiver%20Operating%20Characteristic%20AUC%20Packages%20in%20R.md">ROC curves and AUC packages in R</a></h3>
+              <p>A tour of R packages for calculating and working with receiver operating characteristic curves and AUC.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="explainability">
+              <div class="meta"><time datetime="2019-05-18">May 18, 2019</time><span>Explainable AI</span></div>
+              <h3><a href="article.html?post=2019-05-18-Machine-Learning-Interpretability.md">Machine learning interpretability</a></h3>
+              <p>Explore methods and tools for understanding model behavior and making machine learning more interpretable.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="spark">
+              <div class="meta"><time datetime="2019-03-11">Mar 11, 2019</time><span>Apache Spark</span></div>
+              <h3><a href="article.html?post=2019-03-11-Distributed%20-Machine-Learing-with-Spark-ML.md">Distributed machine learning with Spark ML</a></h3>
+              <p>An introduction to distributed machine learning algorithms and workflows with Spark ML.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="recommendation">
+              <div class="meta"><time datetime="2019-02-27">Feb 27, 2019</time><span>Recommender systems</span></div>
+              <h3><a href="article.html?post=2019-02-27-Hyperparameter-Tuning%20-Alternating-Least-Squares-Recommender-System.md">Tuning an alternating least squares recommender</a></h3>
+              <p>Explore hyperparameter tuning for the alternating least squares recommendation algorithm.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="recommendation">
+              <div class="meta"><time datetime="2018-12-30">Dec 30, 2018</time><span>Recommender systems</span></div>
+              <h3><a href="article.html?post=2018-12-30-Recommender-System-in-Spark-Alternating-Least-Squares.md">Building a recommender system in Spark with ALS</a></h3>
+              <p>Build a collaborative filtering recommender using Spark's alternating least squares algorithm.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="spark">
+              <div class="meta"><time datetime="2018-11-27">Nov 27, 2018</time><span>Apache Spark</span></div>
+              <h3><a href="article.html?post=2018-11-27-Introduction-To%20-Spark-A-Pyspark-Tutorial.md">A PySpark tutorial: getting started with Spark in Python</a></h3>
+              <p>Get started with Apache Spark in Python and learn the basics of working with PySpark data.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="computer-vision">
+              <div class="meta"><time datetime="2018-08-21">Aug 21, 2018</time><span>Computer vision</span></div>
+              <h3><a href="article.html?post=2018-08-21-Pothole-Detection-With-Machine-Learning.md">Pothole detection with machine learning</a></h3>
+              <p>Investigate machine learning approaches for identifying potholes from road and vehicle sensor data.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="programming">
+              <div class="meta"><time datetime="2018-07-22">Jul 22, 2018</time><span>Python · R</span></div>
+              <h3><a href="article.html?post=2018-07-22-Working-with-Python-in-R.md">Working with Python in R</a></h3>
+              <p>Combine Python and R in one analytical workflow and make use of tools from both ecosystems.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="data-science">
+              <div class="meta"><time datetime="2018-07-09">Jul 09, 2018</time><span>Data science</span></div>
+              <h3><a href="article.html?post=2018-07-09-Exploratory-Data-Analysis.md">Exploratory data analysis</a></h3>
+              <p>Use exploratory analysis to understand a dataset, inspect its variables, and build a foundation for modeling.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="programming">
+              <div class="meta"><time datetime="2018-06-26">Jun 26, 2018</time><span>R · Documentation</span></div>
+              <h3><a href="article.html?post=2018-06-26-github_document.md">Rendering a Markdown document for GitHub</a></h3>
+              <p>A reproducible walkthrough of preparing and rendering an analysis as a GitHub-friendly document.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="web-scraping">
+              <div class="meta"><time datetime="2018-03-11">Mar 11, 2018</time><span>Python · Web scraping</span></div>
+              <h3><a href="article.html?post=2018-03-11-Hands-On-Web-Scrapping-with-Python.md">Hands-on web scraping with Python</a></h3>
+              <p>Get started retrieving and parsing web pages with Python's requests and Beautiful Soup libraries.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="language-models">
+              <div class="meta"><span>Generative AI</span><span>LLM engineering</span></div>
+              <h3><a href="feature-engineering-with-llms.html">From messy text to useful features: a practical LLM pattern</a></h3>
+              <p>Structure transaction descriptions with an LLM, then validate and encode the output without leaking information across data splits.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
+            <article class="post-card blog-card" data-blog-category="fraud">
+              <div class="meta"><span>Fraud detection</span><span>LLM engineering</span></div>
+              <h3><a href="fraud-detection-with-llms.html">Fraud detection with LLMs: signals, safeguards, and human review</a></h3>
+              <p>Combine language-derived context with established risk signals while keeping decisions measurable and reviewable.</p>
+              <span class="read-link">Read the article <span aria-hidden="true">→</span></span>
+            </article>
           </div>
         </div>
       </section>
@@ -101,7 +244,7 @@
           <p>Building practical data and AI systems from reliable foundations through production.</p>
         </div>
         <div><h4>Contact</h4><ul><li><a href="../pages/contact.html">Send a message</a></li></ul></div>
-        <div><h4>Focus</h4><ul><li>Data science</li><li>Data engineering</li><li>Machine learning & generative AI</li></ul></div>
+        <div><h4>Focus</h4><ul><li>Data science</li><li>Data engineering</li><li>Machine learning &amp; generative AI</li></ul></div>
       </div>
       <div class="container footer-bottom"><p>© <span id="year"></span> Nana Boateng. All rights reserved.</p></div>
     </footer>

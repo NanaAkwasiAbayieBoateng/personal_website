@@ -409,27 +409,40 @@ p { margin: 0 0 1.2rem; color: var(--muted); }
 .filter-button:hover { border-color: rgba(99, 226, 196, 0.45); color: var(--text); }
 .filter-button[aria-pressed="true"] { border-color: var(--secondary); background: rgba(99, 226, 196, 0.12); color: var(--secondary); }
 .blog-results { grid-column: 1 / -1; margin: 0; font-size: 0.82rem; }
-.blog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.blog-grid { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
 .post-card { padding: 1.6rem; }
-.blog-card { display: flex; min-height: 260px; flex-direction: column; transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
-.blog-card:hover { transform: translateY(-4px); border-color: rgba(99, 226, 196, 0.45); box-shadow: 0 22px 46px rgba(0, 0, 0, 0.23); }
+.blog-card { transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
+.blog-card:hover { transform: translateY(-2px); border-color: rgba(99, 226, 196, 0.45); box-shadow: 0 22px 46px rgba(0, 0, 0, 0.23); }
 .blog-card[hidden], .post-card[hidden] { display: none; }
-.post-card .meta { display: block; margin-bottom: 0.9rem; color: var(--secondary); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; }
-.post-card h3 { font-size: clamp(1.35rem, 2.3vw, 1.75rem); }
+.post-card .meta { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; margin-bottom: 0.8rem; color: var(--secondary); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; }
+.post-card h3 { margin-bottom: 0.65rem; font-size: clamp(1.25rem, 2.3vw, 1.65rem); }
+.post-card h3 a { color: var(--text); text-decoration: none; text-underline-offset: 0.2em; }
+.post-card h3 a:hover, .post-card h3 a:focus-visible { color: var(--secondary); text-decoration: underline; }
 .post-card p { font-size: 0.92rem; }
-.read-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: auto; padding-top: 1rem; color: var(--secondary); font-size: 0.88rem; font-weight: 700; }
+.read-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.15rem; color: var(--secondary); font-size: 0.88rem; font-weight: 700; }
 
 .article-wrap { width: min(790px, calc(100% - 3rem)); margin-inline: auto; }
 .article-header { padding-block: clamp(3rem, 7vw, 5rem) 1.6rem; }
 .article-header h1 { max-width: 850px; font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
 .article-meta { max-width: 690px; color: var(--muted); font-size: 1.04rem; }
+.article-status { margin-block: 1rem; color: var(--muted); }
+.article-status[hidden] { display: none; }
 .article-content { padding-block: 1rem 5rem; }
 .article-content > p { font-size: 1.02rem; }
 .article-content h2 { margin-top: 2.8rem; font-size: clamp(1.7rem, 3vw, 2.25rem); }
 .article-content h3 { margin-top: 1.8rem; }
 .article-content ul { margin-bottom: 1.5rem; padding-left: 1.4rem; color: var(--muted); }
+.article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--muted); }
 .article-content li { margin-bottom: 0.55rem; }
 .article-content code:not(pre code) { padding: 0.12em 0.35em; border: 1px solid var(--border); border-radius: 5px; background: rgba(255, 255, 255, 0.05); color: var(--secondary); font-size: 0.9em; }
+.article-content pre { max-width: 100%; overflow-x: auto; padding: 1.2rem; border: 1px solid var(--border); border-radius: 14px; background: #070c13; color: #d9e8f8; font: 0.86rem/1.7 "Cascadia Code", Consolas, monospace; tab-size: 4; }
+.article-content blockquote { margin: 1.5rem 0; padding: 0.25rem 1.2rem; border-left: 3px solid var(--secondary); color: var(--muted); }
+.article-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.article-content th, .article-content td { padding: 0.7rem 0.85rem; border: 1px solid var(--border); text-align: left; }
+.article-content th { color: var(--text); background: rgba(255, 255, 255, 0.04); }
+.article-content img { max-width: 100%; height: auto; border-radius: 12px; }
+.article-content a { color: var(--secondary); text-underline-offset: 0.2em; }
+.article-content hr { margin-block: 2rem; border: 0; border-top: 1px solid var(--border); }
 .code-example { position: relative; margin: 1.4rem 0 1.8rem; overflow: hidden; border: 1px solid var(--border); border-radius: 17px; background: #070c13; }
 .code-label { margin: 0; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: var(--secondary); font-size: 0.76rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
 .code-example pre { margin: 0; overflow-x: auto; padding: 1.25rem; color: #d9e8f8; font: 0.86rem/1.7 "Cascadia Code", Consolas, monospace; tab-size: 4; }

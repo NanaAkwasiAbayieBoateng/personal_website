@@ -20,7 +20,8 @@ Pages use relative links, so the site can be served from a root domain or a subd
 
 Open `index.html` in a browser, or serve this directory with any static file server. For example, when Python is available:
 
-```powershellco
+```powershellcocd ..
+
 python -m http.server 8000
 ```
 
