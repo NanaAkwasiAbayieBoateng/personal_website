@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  Distributed Machine Learning with Spark ML. 
-subtitle: Elastic Net Logistic Regression, Gradient-Bossting Machines, Random Forest Models in Spark 
+title: Distributed machine learning with Spark ML
+subtitle: Elastic net logistic regression, gradient-boosted trees, and random forests in Spark
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [spark ml,pyspark machine learning,hyperparameter tuning, scaling Machine learning]
 ---
 
-### Distributed  Machine Learning with Spark ML
+### Distributed machine learning with Spark ML
 
-A host of Regression and classification models are available in Spark ML libary. The models include :
+A range of regression and classification models is available in the Spark ML library. These include:
 #### Classification
 * Logistic regression(Binomial and Multinomial)
 * Decision tree classifier
@@ -562,7 +562,7 @@ plt.show()
 
 
 
-![ ]( /img/SPARK_ML/1.png)
+![ ](../img/SPARK_ML/1.png)
 
 Correlations between independent variables.
 
@@ -583,7 +583,7 @@ for i in range(n):
 
 
 
-![ ]( /img/SPARK_ML/2.png)
+![ ](../img/SPARK_ML/2.png)
 
 
 ```python
@@ -607,7 +607,7 @@ plt.show()
 
 
 
-![ ]( /img/SPARK_ML/3.png)
+![ ](../img/SPARK_ML/3.png)
 
 
 #### Preprocessing Data
@@ -1081,7 +1081,7 @@ plt.show()
 
 
 
-![ ]( /img/SPARK_ML/4.png)
+![ ](../img/SPARK_ML/4.png)
 
 
 Summarize the model over the training set, we can also obtain the receiver-operating characteristic and areaUnderROC.
@@ -1100,7 +1100,7 @@ print('Training Dataset AUC: {}'.format(trainingSummary.areaUnderROC))
 
 
 
-![ ]( /img/SPARK_ML/5.png)
+![ ](../img/SPARK_ML/5.png)
 
 
     Training Dataset AUC: 0.9045120993163305
@@ -1137,7 +1137,7 @@ plt.show()
 
 
 
-![ ]( /img/SPARK_ML/6.png)
+![ ](../img/SPARK_ML/6.png)
 
 
 Evaluate our Logistic Regression model.

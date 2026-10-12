@@ -1,6 +1,6 @@
 ---
-title: " Pothole Detection With Machine Learning"
-subtitle: Visualization with ggplot Extensions
+title: Pothole detection with machine learning
+subtitle: Predicting pothole size and depth from vehicle sensor data
 #output: rmarkdown::github_document
 
 output:
@@ -27,13 +27,13 @@ tags:  Machine Learning,visualization,Data Exploration,caret,recipes
 
 Introduction
 ---------------------------------
-Our goal is to predict the depth and size of a pothole based on features collecting by vehicle running over potholes such as vehicle speed,acceleration ,direction ect. The number of distinct  labels Label_Combined B1,..B5  represents various  increasing size and depth of potholes.
+Our goal is to predict a pothole's depth and size from features collected as a vehicle travels over it, such as speed, acceleration, and direction. The distinct labels B1–B5 in `Label_Combined` represent potholes of increasing size and depth.
 
 
 Load Required Packages
 ---------------------------------
 
-The pacman package provides a convenient way to load packages. It installs the package before loading if it not already installed.One of my favorite themes that I use with ggplot is the theme_pubclean. Here I set all themes with ggplot by it.
+The `pacman` package provides a convenient way to load packages, installing them first if they are not already available. One of my favorite themes for `ggplot2` is `theme_pubclean()`. The following call sets it as the default theme.
 
 
 ```r
@@ -291,7 +291,7 @@ aggr(potholedata , col=c('navyblue','yellow'),
                     gap=3, ylab=c("Missing data","Pattern"))
 ```
 
-![ ]( /img/pothole/1.png)
+![ ](../img/pothole/1.png)
 
 ```
 ## 
@@ -318,7 +318,7 @@ aggr(potholedata , col=c('navyblue','yellow'),
 plot_missing(potholedata)
 ```
 
-![ ]( /img/pothole/2.png)
+![ ](../img/pothole/2.png)
 
 There exist significant correlation between some of the variables. This is not suprising because some of the features were engineered from others already present.
 
@@ -327,7 +327,7 @@ plot_correlation(potholedata,type = "continuous",theme_config = list(legend.posi
   element_text(angle = 90)))
 ```
 
-![ ]( /img/pothole/3.png)
+![ ](../img/pothole/3.png)
 
 
 
@@ -337,7 +337,7 @@ potholedata%>%select(Label_Combined ,Peak.Duration, Vehicle.Speed..mph., Peak.Z.
   theme(legend.position = "top")
 ```
 
-![ ]( /img/pothole/4.png)
+![ ](../img/pothole/4.png)
 
 
 
@@ -352,7 +352,7 @@ pn<-potholedata%>%select(Label_Combined ,Peak.Duration, Vehicle.Speed..mph., Pea
 pn
 ```
 
-![ ]( /img/pothole/5.png)
+![ ](../img/pothole/5.png)
 
 
 We can select the elements in the matrix plot with their indices.
@@ -361,61 +361,61 @@ We can select the elements in the matrix plot with their indices.
 pn[1,1]
 ```
 
-![ ]( /img/pothole/6.png)
+![ ](../img/pothole/6.png)
 
 ```r
 pn[1,2]
 ```
 
-![ ]( /img/pothole/7.png)
+![ ](../img/pothole/7.png)
 
 ```r
 pn[1,3]
 ```
 
-![ ]( /img/pothole/8.png)
+![ ](../img/pothole/8.png)
 
 ```r
 pn[1,4]
 ```
 
-![ ]( /img/pothole/9.png)
+![ ](../img/pothole/9.png)
 
 ```r
 pn[1,5]
 ```
 
-![ ]( /img/pothole/10.png)
+![ ](../img/pothole/10.png)
 
 ```r
 pn[1,6]
 ```
 
-![ ]( /img/pothole/11.png)
+![ ](../img/pothole/11.png)
 
 ```r
 pn[1,7]
 ```
 
-![ ]( /img/pothole/12.png)
+![ ](../img/pothole/12.png)
 
 ```r
 pn[1,8]
 ```
 
-![ ]( /img/pothole/13.png)
+![ ](../img/pothole/13.png)
 
 ```r
 pn[1,9]
 ```
 
-![ ]( /img/pothole/14.png)
+![ ](../img/pothole/14.png)
 
 ```r
 pn[1,10]
 ```
 
-![ ]( /img/pothole/15.png)
+![ ](../img/pothole/15.png)
 
 
 
@@ -423,38 +423,38 @@ pn[1,10]
 pn[3,2]
 ```
 
-![ ]( /img/pothole/16.png)
+![ ](../img/pothole/16.png)
 
 ```r
 pn[6,5]
 ```
 
-![ ]( /img/pothole/17.png)
+![ ](../img/pothole/17.png)
 
 ```r
 pn[5,3]
 ```
 
-![ ]( /img/pothole/18.png)
+![ ](../img/pothole/18.png)
 
 
 ```r
 pn[6,4]
 ```
 
-![ ]( /img/pothole/19.png)
+![ ](../img/pothole/19.png)
 
 ```r
 pn[6,5]
 ```
 
-![ ]( /img/pothole/20.png)
+![ ](../img/pothole/20.png)
 
 ```r
 pn[6,3]
 ```
 
-![ ]( /img/pothole/21.png)
+![ ](../img/pothole/21.png)
 
 The summary  statistics for each variable in the data
 
@@ -1747,7 +1747,7 @@ Importance=varImp(model_multlog ,scale=T)$Overall
 Varplot(feature,Importance)
 ```
 
-![ ]( /img/pothole/22.png)
+![ ](../img/pothole/22.png)
 
 ```r
 ggsave("/POTHOLEDETECTION/variable.png") 
@@ -2133,7 +2133,7 @@ Multiclasslogloss(test_tbl2$Label_Combined, pred_probs1)
 
 
 #### Micro-averaged Metrics
-The micro-averaged precision, recall, and F-1 can also be computed from the matrix above. Compared to unweighted macro-averaging, micro-averaging favors classes with a larger number of instances. Because the sum of the one-vs-all matrices is a symmetric matrix, the micro-averaged precision, recall, and F-1 wil be the same.
+The micro-averaged precision, recall, and F-1 can also be computed from the matrix above. Compared to unweighted macro-averaging, micro-averaging favors classes with a larger number of instances. Because the sum of the one-vs-all matrices is a symmetric matrix, the micro-averaged precision, recall, and F-1 will be the same.
 
 
 
@@ -2225,7 +2225,7 @@ Average_Accuracy
 ```
 
 #### Micro-averaged Metrics
-The micro-averaged precision, recall, and F-1 can also be computed from the matrix above. Compared to unweighted macro-averaging, micro-averaging favors classes with a larger number of instances. Because the sum of the one-vs-all matrices is a symmetric matrix, the micro-averaged precision, recall, and F-1 wil be the same.
+The micro-averaged precision, recall, and F-1 can also be computed from the matrix above. Compared to unweighted macro-averaging, micro-averaging favors classes with a larger number of instances. Because the sum of the one-vs-all matrices is a symmetric matrix, the micro-averaged precision, recall, and F-1 will be the same.
 
 
 ```r
@@ -2379,7 +2379,7 @@ getTrainPerf(knnFit)
 ggplot(knnFit)
 ```
 
-![ ]( /img/pothole/23.png)
+![ ](../img/pothole/23.png)
 
 
 ```r
@@ -2825,7 +2825,7 @@ h2o_multdata<-data.frame(h2o.varimp(h2o_mult))
 Varplot(feature=h2o_multdata$names,Importance=h2o_multdata$coefficients)
 ```
 
-![ ]( /img/pothole/24.png)
+![ ](../img/pothole/24.png)
 
 
 ```r
@@ -3152,7 +3152,7 @@ getTrainPerf(xgbm)
 ggplot(xgbm)
 ```
 
-![ ]( /img/pothole/26.png)
+![ ](../img/pothole/26.png)
 
 ```r
 xgbm$bestTune

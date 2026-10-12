@@ -29,6 +29,7 @@ Then visit `http://localhost:8000`.
 
 ## GitHub Actions
 
-The `Validate site` workflow runs on pushes and pull requests. It checks that
-local file links and asset references in the HTML pages point to files in the
-repository.
+The `Validate site` workflow runs on pushes and pull requests. It checks local
+links and assets in HTML pages, and validates that each Markdown blog article
+has a dated filename, non-empty `title` and `subtitle` front matter, a body,
+working local references, and a matching link from the blog index.

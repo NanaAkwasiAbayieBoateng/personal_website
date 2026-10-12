@@ -1598,7 +1598,7 @@ optuna.visualization.plot_optimization_history(study)
 ```
 
 
-![png](/img/bayesianoptimization/bayes1.PNG)
+![png](../img/bayesianoptimization/bayes1.PNG)
     
 
 
@@ -1607,7 +1607,7 @@ optuna.visualization.plot_optimization_history(study)
 optuna.visualization.plot_slice(study)
 ```
 
-![png](/img/bayesianoptimization/bayes2.PNG)
+![png](../img/bayesianoptimization/bayes2.PNG)
     
 
 

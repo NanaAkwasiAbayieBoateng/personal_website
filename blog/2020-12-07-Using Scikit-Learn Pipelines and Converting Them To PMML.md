@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Using Scikit-Learn Pipelines and Converting Them To PMML
-subtitle:  
+title: Using scikit-learn pipelines and converting them to PMML
+subtitle: Building repeatable machine-learning workflows with scikit-learn
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [pipelines, PMML, Automation,xgboost]
 ---
 
 
-### Using Scikit-Learn Pipelines and Converting Them To PMML
+### Using scikit-learn pipelines and converting them to PMML
 
 
 #### Introduction
 
 
-Pipelining in machine learning involves chaining all the steps involved in training a model together. The pipeline allows to assemble several steps that can be cross-validated together while setting different parameter values. It is a step closer to automating the all the steps such as preprocessing, missing value imputation etc together. The pipeline steps used in getting the model ready for the training can also be applied to test data in a single step to make it ready for prediction. A Pipeline Sequentially applies  a list of transforms and a final estimator to a dataset. The  Intermediate steps of the  implement fit and transform methods whiles the final estimator implements a  fit. The transformers in the pipeline can be cached using memory argument.
+In machine learning, a pipeline chains the steps needed to train a model. It lets you cross-validate those steps together and tune their parameters. This helps automate tasks such as preprocessing and missing-value imputation, and ensures the same transformations are applied to test data before prediction. A scikit-learn `Pipeline` applies a sequence of transformers followed by a final estimator. Intermediate steps implement `fit` and `transform`, while the final estimator implements `fit`. Transformers can be cached by setting the `memory` parameter.
 
 
 
@@ -659,7 +659,7 @@ plt.show()
 
     
 
-![png](/img/pipelines/output_30_0.png)    
+*Figure unavailable: the income-distribution chart is missing from the media archive.*
 
 
 
@@ -991,14 +991,14 @@ plot_confusion_matrix(y_true=y_val, y_pred=y_pred,
 
     
 
-![png](/img/pipelines/output_48_1.png)
+*Figure unavailable: the confusion-matrix chart is missing from the media archive.*
     
 
 
 
     
 
-![png](/img/pipelines/output_61_1.png)
+*Figure unavailable: the classification-results chart is missing from the media archive.*
     
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Fine-Tuning XLNet for Sentiment Analysis
-subtitle:  Sequence Classification of Fake and Real News
+title: Fine-tuning XLNet for sequence classification
+subtitle: Classifying real and fake news
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [Fine-tuning,PyTorch,Transfer Learning, Sentiment Analysis,Tokenization, Text Analysis,Transformer model]
@@ -9,10 +9,9 @@ tags: [Fine-tuning,PyTorch,Transfer Learning, Sentiment Analysis,Tokenization, T
 
 ### Introduction
 
-XLNet is a  generalized autoregressive Transformer that enables
-learning bidirectional contexts by maximizing the expected likelihood  of a sequence w.r.t. all possible permutations of the factorization order. XLNet employs Transformer-XL autoregressive model into pre-training but without the limitation of the fixed forward or backward factorization order of autoregressive models. XLNet achieves state-of-the-art results on various natural language task that involves long text sequence in question answering, sentiment analysis, natural language inference and document ranking. The permutation operation enables the  context for each position to  consist of tokens from both left and right. The bidirectional context in a sequence  is captured by the expectation where each position learns to utilize contextual information  from all positions.
+XLNet is a generalized autoregressive Transformer that learns bidirectional contexts by maximizing the expected likelihood over possible factorization orders. It incorporates Transformer-XL into pretraining without requiring a fixed forward or backward factorization order. The permutation-based objective lets each position draw context from tokens on both its left and right. XLNet has achieved strong results on tasks such as question answering, sentiment analysis, natural language inference, and document ranking.
 
- The technical details is available in the paper [XLNet: Generalized Autoregressive Pretraining for Language Understanding](https://arxiv.org/abs/1906.08237v2)
+The technical details are available in the paper [XLNet: Generalized Autoregressive Pretraining for Language Understanding](https://arxiv.org/abs/1906.08237v2).
 
 
 
@@ -524,7 +523,7 @@ fig.show()
 fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/XLNET/file1.html")
 ```
 
-<iframe src="/img/XLNet/file1.html"
+<iframe src="../img/XLNet/file1.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -596,7 +595,7 @@ def preprocess_sentence_english(w):
   # Fix misspelled words
   w = ''.join(''.join(s)[:2] for _, s in itertools.groupby(w))# checking that each character should occur not more than 2 times in every word
 
-  # Tokenizing ,change cases & join together to remove unneccessary white spaces
+  # Tokenize, change case, and join tokens to remove unnecessary whitespace
   w = tok.tokenize(w)
   w = (" ".join(w)).strip()
   return w
@@ -676,7 +675,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/XLNET/file2.html")
 ```
 
 
-<iframe src="/img/XLNet/file2.html"
+<iframe src="../img/XLNet/file2.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -914,7 +913,7 @@ def create_attn_masks(input_ids):
 
 
 ```python
-# Tokenize all of the sentences and map the tokens to thier word IDs.
+# Tokenize all of the sentences and map the tokens to their word IDs.
 
 input_ids = tokenize_inputs(sentences, tokenizer, num_embeddings=120)
 attention_masks = create_attn_masks(input_ids)
@@ -1196,9 +1195,9 @@ Training loop:
 - Backward pass (backpropagation)
 - Tell the network to update parameters with optimizer.step()
 - Track variables for monitoring progress
-Evalution loop:
+Evaluation loop:
 
-Tell the model not to compute gradients by setting th emodel in evaluation mode
+Tell the model not to compute gradients by setting the model to evaluation mode.
 - Unpack our data inputs and labels
 - Load data onto the GPU for acceleration
 - Forward pass (feed input data through the network)
@@ -2126,7 +2125,7 @@ plt.show()
 
 
     
-![png](/img/XLNet/file3.png)
+![png](../img/XLNet/file3.png)
 
 
 ####6. Get Predictions

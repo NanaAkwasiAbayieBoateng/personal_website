@@ -9,9 +9,9 @@ tags: [google colab, SHAP, LIME,lightgbm]
 
 
 #### Introduction
-Machine learning algorithms are often said to be black-box models in that there is not a good idea of how the model is arriving at predictions.This has often hindered adopting machine learning models in certain industires where interpretation is key. Examples of such areas include  financial institutions who are regulated and have to explain decisions such as rejecting loan application or detecting fraud.Also, A healthcare provider may want  to identify what factors are driving each patient's risk of some disease so they can directly address those risk factors with targeted health interventions
-. Model interprtability allows you to determine how much you can trust a prediction model as a whole,debug, inform human decision making, Inform feature engineering, data collection
- and provides insights that can be used to improve the model.
+Machine-learning algorithms are often described as black boxes because it can be difficult to understand how they arrive at predictions. This can hinder their adoption in industries where interpretation is essential. For example, financial institutions may need to explain decisions such as loan rejections or fraud detection. Healthcare providers may want to identify the factors driving a patient's disease risk so they can address those risks with targeted interventions.
+
+Model interpretability helps assess how much to trust a model, debug it, inform human decisions, guide feature engineering and data collection, and identify opportunities to improve the model.
 
 First we need to install the libraries for machine learning intrepatabilty and model building.
 The dataset fro this post can be found here [here](https://archive.ics.uci.edu/ml/datasets/heart+disease) The data has features to  predict  heart disease. 
@@ -532,7 +532,7 @@ plt.show()
 
 
 
-![ png]( /img/ML-Interpretability2/1.png)
+![ png](../img/ML-Interpretability2/1.png)
 
 
 ```python
@@ -1004,7 +1004,7 @@ plt.show()
 
 
 
-![ png]( /img/ML-Interpretability2/2.png)
+![ png](../img/ML-Interpretability2/2.png)
 
 #### Plotting Model Inferences  From lightgbm Library
 
@@ -1017,7 +1017,7 @@ plt.show()
 
 
 
-![ png]( /img/ML-Interpretability2/3.png)
+![ png](../img/ML-Interpretability2/3.png)
 
 
 ```python
@@ -1028,7 +1028,7 @@ plt.show()
 ```
 
 
-![ png]( /img/ML-Interpretability2/4.png)
+![ png](../img/ML-Interpretability2/4.png)
 
 
 
@@ -1040,7 +1040,7 @@ lgb.create_tree_digraph(lgb_model)
 
 
 
-![ png]( /img/ML-Interpretability2/5.svg)
+![ png](../img/ML-Interpretability2/5.svg)
 
 
 ####  Permutation Importance
@@ -1069,7 +1069,7 @@ eli5.show_weights(perm, feature_names=train_X.columns.tolist())
 
 
 
-![ png]( /img/ML-Interpretability2/perm.png)
+![ png](../img/ML-Interpretability2/perm.png)
 
   
 
@@ -1173,7 +1173,7 @@ plt.show()
 
 
 
-![ png]( /img/ML-Interpretability2/6.png)
+![ png](../img/ML-Interpretability2/6.png)
 
 
 
@@ -1323,7 +1323,7 @@ plt.show()
 
 
 
-![ png]( /img/ML-Interpretability2/7.png)
+![ png](../img/ML-Interpretability2/7.png)
 
 
 
@@ -1353,7 +1353,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/8.png)
+![png](../img/ML-Interpretability2/8.png)
 
 
 ```python
@@ -1388,7 +1388,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/9.png)
+![png](../img/ML-Interpretability2/9.png)
 
 
 ```python
@@ -1404,7 +1404,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/10.png)
+![png](../img/ML-Interpretability2/10.png)
 
 
 
@@ -1424,7 +1424,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/11.png)
+![png](../img/ML-Interpretability2/11.png)
 
 
 ```python
@@ -1443,7 +1443,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/12.png)
+![png](../img/ML-Interpretability2/12.png)
 
 
 ####  Interpreting Partial Dependence Plots
@@ -1474,7 +1474,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/13.png)
+![png](../img/ML-Interpretability2/13.png)
 
 
 ```python
@@ -1489,7 +1489,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/14.png)
+![png](../img/ML-Interpretability2/14.png)
 
 
 
@@ -1505,7 +1505,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/15.png)
+![png](../img/ML-Interpretability2/15.png)
 
 
 
@@ -1521,7 +1521,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/16.png)
+![png](../img/ML-Interpretability2/16.png)
 
 
 
@@ -1537,7 +1537,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/17.png)
+![png](../img/ML-Interpretability2/17.png)
 
 
 ```python
@@ -1553,7 +1553,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/18.png)
+![png](../img/ML-Interpretability2/18.png)
 
 
 
@@ -1568,7 +1568,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/19.png)
+![png](../img/ML-Interpretability2/19.png)
 
 
 ```python
@@ -1586,7 +1586,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/20.png)
+![png](../img/ML-Interpretability2/20.png)
 
 
 
@@ -1605,7 +1605,7 @@ plt.show()
 
 
 
-![png]( /img/ML-Interpretability2/21.png)
+![png](../img/ML-Interpretability2/21.png)
 
 
 Combined  effect of age and ca , number of major vessels (0-3) colored by flourosopy on heart disease prediction is shown above. Any age combined with low ca number increases the risk of heart disease. This is shown by the yellow colors  just above the horizontal axis. Any age also with high ca number reduces the risk if a heart disease shown by blue and purple regions higher up the chart. The effect of ca number on heart disease prediction is stronger than the age variable.
@@ -1893,7 +1893,7 @@ shap.dependence_plot("ca", shap_values, train_X)
 
 
 
-![png]( /img/ML-Interpretability2/22.png)
+![png](../img/ML-Interpretability2/22.png)
 
 
 ```python
@@ -1926,7 +1926,7 @@ shap.summary_plot(shap_values, train_X)
 
 
 
-![png]( /img/ML-Interpretability2/23.png)
+![png](../img/ML-Interpretability2/23.png)
 
 
 
@@ -1942,7 +1942,7 @@ shap.summary_plot(shap_values, train_X, plot_type="bar")
 
 
 
-![png]( /img/ML-Interpretability2/24.png)
+![png](../img/ML-Interpretability2/24.png)
 
 
 #### Local Interpretable Model-Agnostic Explanations (LIME )
@@ -39107,7 +39107,7 @@ exp.as_pyplot_figure();
 
 
 
-![png]( /img/ML-Interpretability2/25.png)
+![png](../img/ML-Interpretability2/25.png)
 
 
 
@@ -39148,11 +39148,10 @@ graph
 
 
 
-![png]( /img/ML-Interpretability2/26.svg)
+![png](../img/ML-Interpretability2/26.svg)
 
 
 
 #### Explaining Predictions
 
 For the particular example/row of the feature dataset picked  randomly, the predicted target is not having a heart disease(0) with probability of 0.94. It can be inferred taht the features contributing to this prediction are the Feature Values shown in orange color above. These include ca, sex, cp, slope, thal, oldpeak and exang. The average  probability contribution to the target class predicition from the  individual features are shown in the midlle  barplot above. The remaining features decreases prediction of the target class 0.
-

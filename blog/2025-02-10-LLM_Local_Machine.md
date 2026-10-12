@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Run LLM's On Your Local Machine
-subtitle:   LLM's On Zero Dollars
+title: Run LLMs on your local machine
+subtitle: Running LLMs at no cost
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [LLM, Ollama, Huggingface, Llama, VLLM, LM Studio, GPT4All]
@@ -379,9 +379,9 @@ else:
 ```
 
 
-![png](/img/local_llm/ollama_3.2b.png)
-![png](/img/local_llm/ollama_powershell1.png)
-![png](/img/local_llm/ollama_terminal.png)
+![png](../img/local_llm/ollama_3.2b.png)
+![png](../img/local_llm/ollama_powershell1.png)
+![png](../img/local_llm/ollama_terminal.png)
 
 
 
@@ -525,8 +525,8 @@ Getting started with GPT4All is easy. Simply download the application from the N
 GPT4All is a powerful tool that is democratizing access to LLMs. With its continued development, GPT4All is poised to play a major role in the future of artificial intelligence. The recent update of GPT4All v3.4.0, which includes faster models and expanded filetype support. GPT4All is not only for individuals but can also be used by businesses for enterprise purposes.
 
 
-![png](/img/local_llm/gpt4all2.png)
-![png](/img/local_llm/gpt4all1.png)
+![png](../img/local_llm/gpt4all2.png)
+![png](../img/local_llm/gpt4all1.png)
 
 
 
@@ -561,10 +561,10 @@ LM Studio is a powerful application that allows you to run large language models
 
 
 
-![png](/img/local_llm/lmstudio1.png)
-![png](/img/local_llm/lmstudio2.png)
-![png](/img/local_llm/lmstudio3.png)
-![png](/img/local_llm/lmstudio4.png)
+![png](../img/local_llm/lmstudio1.png)
+![png](../img/local_llm/lmstudio2.png)
+![png](../img/local_llm/lmstudio3.png)
+![png](../img/local_llm/lmstudio4.png)
 
 
 
@@ -578,8 +578,8 @@ LM Studio is a powerful application that allows you to run large language models
 Jellybox is a powerful AI development platform that allows you to build, train, and deploy custom AI models directly on your computer. It offers a wide range of tools and services, including chatbots, image recognition, natural language processing, and more. Jellybox's user-friendly interface makes it easy to get started with AI development. Jellybox supports running AI models locally both on macOS and windows. There are executable files that can be downloaded from [jellybox](https://jellybox.com/) website and installed locally to support running AI models locally and entirely offline.
 
 
-![png](/img/local_llm/jellybox1.png)
-![png](/img/local_llm/jellybox2.png)
+![png](../img/local_llm/jellybox1.png)
+![png](../img/local_llm/jellybox2.png)
 
 
 ### Local AI
@@ -601,7 +601,7 @@ curl http://localhost:8080/v1/chat/completions \
 
 ```
 
-![png](/img/local_llm/localai_output.png)
+![png](../img/local_llm/localai_output.png)
 
 
 
@@ -1070,8 +1070,8 @@ cmake --build build -j --target llama-cli
   -p "what was in the beginning?,"
   ```
 
-![png](/img/local_llm/llama_file1.png)
-![png](/img/local_llm/llama_file2.png)
+![png](../img/local_llm/llama_file1.png)
+![png](../img/local_llm/llama_file2.png)
 
 
 
@@ -1189,8 +1189,8 @@ llamafile is a new format introduced by Mozilla. It combines llama.cpp with Cosm
 You can interact with llm in the terminal after running the executable file and also  through the chat interface on browser which opens  automatically otherwise pointed at `http://localhost:8080/`
 
 
-![png](/img/local_llm/llama_file1.png)
-![png](/img/local_llm/llama_file2.png)
+![png](../img/local_llm/llama_file1.png)
+![png](../img/local_llm/llama_file2.png)
 
 
 
@@ -1518,4 +1518,4 @@ print(text)
 # Corrected Sentence: Every fall, the family goes to the mountains.       
 ```
 
-![png](/img/local_llm/litGPT.png)
+![png](../img/local_llm/litGPT.png)

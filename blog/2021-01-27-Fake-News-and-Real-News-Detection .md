@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Fake and Real News Detector
-subtitle:  Classification and Sentiment Analysis of Fake and Real News
+title: Detecting fake and real news
+subtitle: Classification and sentiment analysis of real and fake news
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [Sentiment Analysis,Tokenization, Text Analysis,xgboost,Plotly express]
@@ -9,9 +9,9 @@ tags: [Sentiment Analysis,Tokenization, Text Analysis,xgboost,Plotly express]
 
 ### Introduction
 
-Fake news include false news stories,disinformation and misinformation with the intent of misleading people. The proliferation of fake news in recent years poses great danger to the safety and security of many people around the world. Some people have acted on fake news to commit certain crimes which are unpardonable. The growth of the internet and social media around the world has helped to explode  the consumption of fake news and conspiracy theories around the world. Determining if a piece of news item is fake or real is not so obvious these days especially when the perpetrators create websites with similar names like well-known authentic  news outlets. In this post we will try to do in-depth exploratory analysis and comparison of real and fake new. We will look at negativity, positivity and neutrality in sentiments expressed in both fake and real news. We would end by demonstrating how we can predict whether a news item is fake or real with a classification model.
+Fake news includes false stories, disinformation, and misinformation intended to mislead people. The internet and social media have accelerated the spread of false stories and conspiracy theories. Distinguishing fake from legitimate news can be difficult, especially when misleading sites imitate well-known outlets. In this post, I explore and compare real and fake news, analyze sentiment, and build a classifier to predict whether a news article is fake or real.
 
-The dataset for this analysis is located on kaggle. Find the link [here](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset).
+The dataset for this analysis is available on [Kaggle](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset).
 
 
 ```python
@@ -443,7 +443,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file1.html")
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file1.html"
+<iframe src="../img/FakeNewsDetector/file1.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -480,7 +480,7 @@ fig.show()
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file2.html"
+<iframe src="../img/FakeNewsDetector/file2.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -659,7 +659,7 @@ fig.show()
 fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file3.html")
 ```
 
-<iframe src="/img/FakeNewsDetector/file3.html"
+<iframe src="../img/FakeNewsDetector/file3.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -838,7 +838,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file4.html")
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file4.html"
+<iframe src="../img/FakeNewsDetector/file4.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -865,7 +865,7 @@ fig.show()
 fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file5.html")
 ```
 
-<iframe src="/img/FakeNewsDetector/file5.html"
+<iframe src="../img/FakeNewsDetector/file5.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -1070,7 +1070,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file6.html")
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file6.html"
+<iframe src="../img/FakeNewsDetector/file6.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="800"
@@ -1286,7 +1286,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file7.html")
 
 
 
-<iframe src="/img/FakeNewsDetector/file7.html"
+<iframe src="../img/FakeNewsDetector/file7.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="800"
@@ -1498,7 +1498,7 @@ plt.show()
 
 
     
-![png](/img/FakeNewsDetector/output_38_0.png)
+![png](../img/FakeNewsDetector/output_38_0.png)
     
 
 
@@ -1680,7 +1680,7 @@ plt.show()
 
 
     
-![png](/img/FakeNewsDetector/output_41_0.png)
+![png](../img/FakeNewsDetector/output_41_0.png)
    
 
 
@@ -1921,7 +1921,7 @@ ax1.set_title('High Frequency Words');
 
 
     
-![png](/img/FakeNewsDetector/output_44_0.png)
+![png](../img/FakeNewsDetector/output_44_0.png)
 
 
     
@@ -2126,7 +2126,7 @@ ax1.set_title('High Frequency Words');
 
 
     
-![png](/img/FakeNewsDetector/output_48_0.png)
+![png](../img/FakeNewsDetector/output_48_0.png)
     
 
  Donald Trunmp dominates the news whether fake or real.
@@ -2156,7 +2156,7 @@ HTML('h.html')
 
 ```
 
-<iframe src="/img/FakeNewsDetector/h.html"
+<iframe src="../img/FakeNewsDetector/h.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="800"
@@ -2258,7 +2258,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file8.html")
 
 
 
-<iframe src="/img/FakeNewsDetector/file8.html"
+<iframe src="../img/FakeNewsDetector/file8.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -2436,7 +2436,7 @@ fig.show()
 fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file9.html")
 ```
 
-<iframe src="/img/FakeNewsDetector/file9.html"
+<iframe src="../img/FakeNewsDetector/file9.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -2484,7 +2484,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file10.html"
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file10.html"
+<iframe src="../img/FakeNewsDetector/file10.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -2648,7 +2648,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file11.html"
 
 
 
-<iframe src="/img/FakeNewsDetector/file11.html"
+<iframe src="../img/FakeNewsDetector/file11.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -2687,7 +2687,7 @@ plt.show()
 
 
     
-![png](/img/FakeNewsDetector/output_61_0.png)
+![png](../img/FakeNewsDetector/output_61_0.png)
     
 
 
@@ -2743,7 +2743,7 @@ plt.show()
 
 
     
-![png](/img/FakeNewsDetector/output_63_0.png)
+![png](../img/FakeNewsDetector/output_63_0.png)
     
 
 
@@ -2876,7 +2876,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file12.html"
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file12.html"
+<iframe src="../img/FakeNewsDetector/file12.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -2924,7 +2924,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file13.html"
 
 
 
-<iframe src="/img/FakeNewsDetector/file13.html"
+<iframe src="../img/FakeNewsDetector/file13.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -3198,7 +3198,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file14.html"
 ```
 
 
-<iframe src="/img/FakeNewsDetector/file14.html"
+<iframe src="../img/FakeNewsDetector/file14.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -3242,7 +3242,7 @@ fig.write_html("/content/drive/MyDrive/Colab Notebooks/NLP/htmlfies/file15.html"
 
 
 
-<iframe src="/img/FakeNewsDetector/file15.html"
+<iframe src="../img/FakeNewsDetector/file15.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -3421,7 +3421,7 @@ PlotConfusionMatrix(y_test,y_pred,y_test_real,y_test_fake,label= 'classification
 
 
     
-![png](/img/FakeNewsDetector/output_83_0.png)
+![png](../img/FakeNewsDetector/output_83_0.png)
     
 
 
@@ -3437,6 +3437,5 @@ PlotConfusionMatrix(y_test,y_pred,y_test_real,y_test_fake,label= 'classification
     weighted avg       1.00      1.00      1.00      8980
     
     
-
 
 

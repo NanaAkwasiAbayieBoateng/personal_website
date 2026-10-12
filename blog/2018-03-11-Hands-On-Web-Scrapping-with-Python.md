@@ -1,17 +1,18 @@
 ---
 layout: post
-title: Hands On Web Scrapping in Python. 
-subtitle: Text Mining and Natural Language Processing Part One
+title: Hands-on web scraping with Python
+subtitle: Text mining and natural language processing, part one
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [BeautifulSoup,request,NLTK, text mining]
 ---
 
-## Hands On  Web Scraping in Python
+## Hands-on web scraping with Python
 
 
-Sources of data for data science projects include SQL/NoSQL databases,cloud enviroments  and data stored on local machines. There are times we also extract data such  reviews from online sources  like various web pages. In this postI would share some experiences with extracting text data and subsequntly anlyzing with natural language processing techniques.
-We can start by  requesting the content of the first web page: [here](https://www.indeed.com/cmp/Fiat-Chrysler-Automobiles/reviews).  As follows :
+Data for data science projects comes from SQL and NoSQL databases, cloud environments, and local files. Sometimes, we collect data such as online reviews directly from web pages. In this post, I share how to extract text from web pages and analyze it using natural language processing techniques.
+
+We can start by requesting the content of the first web page, available [here](https://www.indeed.com/cmp/Fiat-Chrysler-Automobiles/reviews):
 
 The steps to extracting the data from the first page involves:
 * Import the get() function from the requests module then assign the address of the web page to a variable named url.
@@ -22,7 +23,7 @@ The steps to extracting the data from the first page involves:
 
 * BeautifulSoup library  allows you to parse the HTML source code from the get() function.
 
-* Timeout request parameter is set to 5 seconds to prevent request from waiting for a response indefinately. 
+* Timeout request parameter is set to 5 seconds to prevent the request from waiting indefinitely for a response.
 
 
 ```python
@@ -77,7 +78,7 @@ Image(filename='/indeedfca.png')
 
 
 
-![ ]( /img/Webscrapping/1.png)
+![ ](../img/Webscrapping/1.png)
 
 
 

@@ -11,11 +11,11 @@ tags: [xgboost,imbalanced-learn, scikit-optimize,Forest of Randomized Trees,Unde
 
 
 ####  Introduction 
-Data with imbalanced target class occurs frequently in several domians such as credit card  Fraud Detection ,insurance claim prediction, email spam detection, anomaly detection, outlier detection etc. Financial instituions loose millions of dollars every year to fraudulent financial transactions. It is important that these institutions are able to identify fraud to protect their customers and also reduce the financial losses that comes from fraudsters. 
-The goal here is to predict fraudulent transactions to minimize loss to financial companies. For machine learning data with imbalanced target clases, the model evaluation metric is the AUC, the area under the ROC curve and the area under the precision-recall curve. The accuaracy metric is not useful in these situations since usually the proportion of the positive class in these situations is so low that even a naive classifier that predicts  all transactions as fraudulent would result in a high accuracy. For example the dataset considered here, the proportion of negative examples is over 99% this a naive classifier can predict all transactions as legitimate and would be over 99% accuarate.
+Imbalanced target classes are common in domains such as credit-card fraud detection, insurance-claim prediction, email spam detection, and anomaly detection. Financial institutions lose millions of dollars to fraudulent transactions each year. Detecting fraud helps protect customers and reduce financial losses.
+The goal here is to identify fraudulent transactions while minimizing losses. For imbalanced data, useful evaluation metrics include the area under the receiver operating characteristic curve (ROC AUC) and the area under the precision-recall curve. Accuracy alone can be misleading: when more than 99% of the examples are legitimate, a naive classifier that predicts every transaction as legitimate can exceed 99% accuracy without identifying any fraud.
 
 
-The following packages that is been installed here will be neccessary for some of the analysis later on this project.
+The following packages are installed for use in the analyses below.
 
 
 ```python
@@ -12775,7 +12775,7 @@ plt.savefig('/content/drive/My Drive/ImbalancedData/all_rocauc.png')
 
 
 
-![png](/img/Imbalanced-Machine-Learning-For-Fraud-Detection/roccurve.png)
+![png](../img/Imbalanced-Machine-Learning-For-Fraud-Detection/roccurve.png)
 
 
 #### Plot the Area Under Orecision Recall Curve
@@ -12817,7 +12817,7 @@ plt.savefig('/content/drive/My Drive/ImbalancedData/auc_pr2.png')
 
 
 
-![png](/img/Imbalanced-Machine-Learning-For-Fraud-Detection/prcurve.png)
+![png](../img/Imbalanced-Machine-Learning-For-Fraud-Detection/prcurve.png)
 
 
 #### Cost-Sensitive Logistic Regression 
@@ -12905,7 +12905,7 @@ plt.show()
 ```
 
 
-![png](/img/Imbalanced-Machine-Learning-For-Fraud-Detection/logistic.png)
+![png](../img/Imbalanced-Machine-Learning-For-Fraud-Detection/logistic.png)
 
 
 

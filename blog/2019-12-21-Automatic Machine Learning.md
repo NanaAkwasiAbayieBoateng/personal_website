@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Automatic Machine Learning
-subtitle: automl in Python and R
+title: Automated machine learning
+subtitle: AutoML in Python and R
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [automl, h2o.ai automl , autokeras, google cloud platform,autoxgboost, automatic deep learning]
@@ -12,15 +12,14 @@ tags: [automl, h2o.ai automl , autokeras, google cloud platform,autoxgboost, aut
 
 #### Automated Machine Learning 
 
-Automated Machine Learning (AutoML) has increased greatly the efficiency of building machine learning models. AutoML achieves this by automating in some applications data pre-processing ,feature engineering, feature extraction , feature selection and hyper-parameter tuning when building machine learning models. AutoML has also reduced the expertise in  academic domains  such as computer science, statistics and other academic knowledge hitherto needed  to build machine learning models. Repetitive task which do not need any expertise in machine learning could be easily automated by AutoML. AutoML can have some drawback which include the amount of time used in training. Since AutoML trains many models and selects the best performing model as the final model, large computaional resources is needed to reduce the time involved in training.
+Automated machine learning (AutoML) can make model development more efficient by automating tasks such as data preprocessing, feature engineering and selection, and hyperparameter tuning. It can lower the expertise needed to build models in fields such as computer science and statistics. AutoML is useful for repetitive tasks that do not require substantial human judgment, but it also has drawbacks. Because it trains and compares many models, it can require significant computing resources and time.
 
 
 
 
 #### Data
 
-Appliances energy prediction dataset from UCI machine learning repository would be used for this exercise. Further description of data and the data itself is 
- available [here](https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction#). The goal is to predict home Appliance  energy use in Wh given several features including temperature in various rooms of the house and humidity etc.
+We use the Appliances Energy Prediction dataset from the UCI Machine Learning Repository for this exercise. A description of the data and the dataset itself are available [here](https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction#). The goal is to predict household energy use, in watt-hours, from features such as room temperature and humidity.
 
 #### Attribute Information:
 
@@ -1536,7 +1535,7 @@ ggplot(Energy_Data, aes(x = Appliances)) +
 
 
 
-![ ]( /img/AUTOML/automl.png)
+![ ](../img/AUTOML/automl.png)
 
 
 ```python
@@ -2048,7 +2047,7 @@ print(yardstick::rsq(pred$data,truth,response))
     
       warnings.warn(x, RRuntimeWarning)
     
-![ ]( /img/AUTOML/1.png)
- ![ ]( /img/AUTOML/2.png)   
- ![ ]( /img/AUTOML/3.png)
+![ ](../img/AUTOML/1.png)
+ ![ ](../img/AUTOML/2.png)
+ ![ ](../img/AUTOML/3.png)
   

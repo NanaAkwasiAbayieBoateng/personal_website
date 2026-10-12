@@ -11,7 +11,7 @@ tags: [data drift, concept drift, two sample test, bootstrap confidence interval
 
 **Introduction**
 
-Data quality issues account for majority of machine learning model flaws. Monitoring and detecting changes in data is commonly used to identify causes of model performance degradation, model drift, decay or staleness. One of the most important components of machine learning operations is model performance monitoring after model deployment. Monitoring and detecting concept drift is commonly used to identify causes of model performance degradation. Concept drift entails changes in underlying distribution of data over time.
+Data quality issues account for many machine-learning model failures. Monitoring changes in data can help identify causes of performance degradation, drift, or staleness. Monitoring model performance after deployment is an important part of machine-learning operations. Detecting concept drift helps identify changes in the underlying data distribution that can affect model performance.
 
 **Why Model Monitoring?**
 
@@ -26,7 +26,7 @@ Concept drift means the statistical relationship between the target variable and
 
 - Change in relation between features, or covariate shift.
 
-- Unexpected changes in the macro economic environment such COVID-19’s impact on the economy.
+- Unexpected changes in the macroeconomic environment, such as the impact of COVID-19 on the economy.
 
 - Natural drift in data such as seasonal changes with temperature.
 
@@ -1020,28 +1020,28 @@ DistributionPlot(data=data,categorical_cols= categorical_cols,continuous_columns
 
  
     
-![png](/img/Drift/output_4_0.png)
-![png](/img/Drift/output_4_1.png)
-![png](/img/Drift/output_4_3.png)
-![png](/img/Drift/output_4_4.png)
-![png](/img/Drift/output_4_5.png)
-![png](/img/Drift/output_4_6.png)
-![png](/img/Drift/output_4_7.png)
-![png](/img/Drift/output_4_10.png)
-![png](/img/Drift/output_4_12.png)
-![png](/img/Drift/output_4_13.png)
-![png](/img/Drift/output_4_14.png)
-![png](/img/Drift/output_4_15.png)
-![png](/img/Drift/output_4_16.png)
-![png](/img/Drift/output_4_17.png)
-![png](/img/Drift/output_4_2.png)
-![png](/img/Drift/output_4_20.png)
-![png](/img/Drift/output_4_21.png)
-![png](/img/Drift/output_4_22.png)
-![png](/img/Drift/output_4_23.png)
-![png](/img/Drift/output_4_24.png)
-![png](/img/Drift/output_4_25.png)
-![png](/img/Drift/output_4_26.png)
+![png](../img/Drift/output_4_0.png)
+![png](../img/Drift/output_4_1.png)
+![png](../img/Drift/output_4_3.png)
+![png](../img/Drift/output_4_4.png)
+![png](../img/Drift/output_4_5.png)
+![png](../img/Drift/output_4_6.png)
+![png](../img/Drift/output_4_7.png)
+![png](../img/Drift/output_4_10.png)
+![png](../img/Drift/output_4_12.png)
+![png](../img/Drift/output_4_13.png)
+![png](../img/Drift/output_4_14.png)
+![png](../img/Drift/output_4_15.png)
+![png](../img/Drift/output_4_16.png)
+![png](../img/Drift/output_4_17.png)
+![png](../img/Drift/output_4_2.png)
+![png](../img/Drift/output_4_20.png)
+![png](../img/Drift/output_4_21.png)
+![png](../img/Drift/output_4_22.png)
+![png](../img/Drift/output_4_23.png)
+![png](../img/Drift/output_4_24.png)
+![png](../img/Drift/output_4_25.png)
+![png](../img/Drift/output_4_26.png)
 
 
 
@@ -1510,7 +1510,7 @@ scipy.stats.wilcoxon(train_df['age'], test_df['age'],mode="auto")
 
 
 
-![png](/img/Drift/manwhitney.PNG)
+![png](../img/Drift/manwhitney.PNG)
 
 
 $ H_0 $: the distributions of both populations are identical
@@ -2138,7 +2138,7 @@ hypothesis_test(data=data,split_column="Split",columns=data.drop('Split',axis=1)
 
 
 
-![png](/img/Drift/mean_diff.PNG)
+![png](../img/Drift/mean_diff.PNG)
 
 
 
@@ -2161,7 +2161,7 @@ For categorical  features with two levels:
    -  Normal Confidence Interval(proportion)
       - Example: Difference in proportion  between feature in Training and serving  datasets.
 
-![png](/img/Drift/prop_diff.PNG)
+![png](../img/Drift/prop_diff.PNG)
 
 
 
@@ -3215,6 +3215,4 @@ There are three main techniques for adapting existing machine learning models to
 For recurring concept drifts, an old model may be combined with a new one handle drift when it occurs. Examples of ensemble methods used here include Adaptive Random Forest (ARF) which extends RF with a concept drift detection algorithm ADWIN to make a decision when a degerading model should be replaced, Dynamic Weighted Majority(DWM).
 Models can be trained to adaptively learn from the changing data so that the model will be update  itself.An example algorithm include online decision tree
 algorithm, called Very Fast Decision Tree classifier (VFDT)
-
-
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: " Exploratory Data Analysis"
-subtitle: Visualization with ggplot Extensions
+title: Exploratory data analysis
+subtitle: An introduction to data exploration and visualization
 #output: rmarkdown::github_document
 
 output:
@@ -20,11 +20,9 @@ highlight: tango  # specifies the syntax highlighting style
 tags:  ggplot2,visualization,Data Exploration,ggplot Extensions
 ---
 
-#<body style="background: #fff;">
-
 Introduction
 ---------------------------------
-In this post, I would like to go through some common methods of data exploration. Data exploration is one of the introductory analysis that is performed before any model building task. Data exploration can uncover some hidden patterns and  lead to  insights into the  some phenomenom behind the data.It can inform the selection of appropriate statistical techniques,tools and models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the causes of the observed phenomena in the data. We can also detect outliers and anomalies in the data through exploration. Exploratory analysis emphasizes graphical visualizations of the data.
+In this post, I introduce common methods of data exploration. Exploratory data analysis (EDA) is an early step in a modeling project: it can reveal patterns, generate insights about the data, and inform the choice of statistical techniques and models. EDA can also help refine hypotheses and detect outliers or anomalies. It often emphasizes visualizing the data.
 
 
 
@@ -33,7 +31,7 @@ In this post, I would like to go through some common methods of data exploration
 Load Required Packages
 ---------------------------------
 
-The pacman package provides a convenient way to load packages. It installs the package before loading if it not already installed.One of my favorite themes that I use with ggplot is the theme_pubclean. Here I set all themes with ggplot by it.
+The `pacman` package provides a convenient way to load packages, installing them when needed. One of my favorite `ggplot2` themes is `theme_pubclean`, which I use to style the plots in this analysis.
 
 
 ```r
@@ -52,7 +50,7 @@ theme_set(theme_pubclean())
 
 
 
-The data for this analysis Orange Juice data, is contained in the ISLR package.The ISLR package created to store the  data for the popular introductory statistical learning text,  Introduction to Statistical Learning with Applications in R (Gareth James, Daniela Witten, Trevor Hastie and Rob Tibshirani).The data contains 1070 purchases where the customer either purchased Citrus Hill or Minute Maid Orange Juice. A number of characteristics of the customer and product are recorded.The categorical response variable is Purchase  with levels CH and MM indicating whether the customer purchased Citrus Hill or Minute Maid Orange Juice. The goal of this data is to predict which of the two brands of orange juice did customers want to buy based on some seventeen features which describes the product and nature of the customers. The dataset can be  [downloaded here](https://raw.githubusercontent.com/NanaAkwasiAbayieBoateng/ExploratoryDataAnalysis/master/orangejuice.csv). It contains 1070 observations and seveenteen features plus the response variable purchase.
+The Orange Juice dataset used in this analysis is included in the `ISLR` package, which accompanies *An Introduction to Statistical Learning with Applications in R* by Gareth James, Daniela Witten, Trevor Hastie, and Rob Tibshirani. It contains 1,070 purchases of Citrus Hill or Minute Maid orange juice, along with characteristics of the customers and products. The categorical response, `Purchase`, has two levels: `CH` and `MM`. The goal is to predict which brand a customer purchased from 17 features describing the products and customers. The dataset can also be [downloaded here](https://raw.githubusercontent.com/NanaAkwasiAbayieBoateng/ExploratoryDataAnalysis/master/orangejuice.csv).
 
 
 #### Description of Variables:
@@ -251,7 +249,7 @@ There are 40 missing observations in the data set.In this exploratory analysis w
 plot_missing(orangejuice)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/1.png)
+![ ](../img/ExploratoryDataAnalysis/1.png)
 
 
 
@@ -264,7 +262,7 @@ pacman::p_load(extracat)
 extracat::visna(orangejuice, sort = "b", sort.method="optile", fr=100, pmax=0.05, s = 2)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/2.png)
+![ ](../img/ExploratoryDataAnalysis/2.png)
 
 
 
@@ -277,7 +275,7 @@ aggr(orangejuice , col=c('navyblue','yellow'),
                     gap=3, ylab=c("Missing data","Pattern"))
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/3.png)
+![ ](../img/ExploratoryDataAnalysis/3.png)
 
 ```
 ## 
@@ -311,7 +309,7 @@ library(Amelia)
 missmap(orangejuice, main = "Missing values vs observed",col=c('navyblue','yellow'),y.cex=0.5)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/4.png)
+![ ](../img/ExploratoryDataAnalysis/4.png)
 
 
 
@@ -320,7 +318,7 @@ missmap(orangejuice, main = "Missing values vs observed",col=c('navyblue','yello
 plot_histogram(orangejuice)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/5.png)
+![ ](../img/ExploratoryDataAnalysis/5.png)
 
 
 
@@ -329,7 +327,7 @@ plot_histogram(orangejuice)
 plot_density(orangejuice)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/6.png)
+![ ](../img/ExploratoryDataAnalysis/6.png)
 
 
 
@@ -337,7 +335,7 @@ plot_density(orangejuice)
 plot_bar(orangejuice)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/7.png)
+![ ](../img/ExploratoryDataAnalysis/7.png)
 
 Purchases made at store store 7 is lower than other stores whereas 
 more customers  purchased Citrus Hill than Minute Maid Orange Juice
@@ -360,7 +358,7 @@ pacman::p_load(GGally)
 na.omit(orangejuice)%>%select_if(is.double)%>%ggpairs(  title = "Continuous Variables")
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/8.png)
+![ ](../img/ExploratoryDataAnalysis/8.png)
 
 
 
@@ -382,7 +380,7 @@ p <- ggparcoord(data = na.omit(orangejuice), columns = c(2:10), groupColumn = "P
 p
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/9.png)
+![ ](../img/ExploratoryDataAnalysis/9.png)
 
 
 ```r
@@ -397,7 +395,7 @@ na.omit(orangejuice)%>%select_if(is.double)%>%
     )
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/10.png)
+![ ](../img/ExploratoryDataAnalysis/10.png)
 
 
 
@@ -410,7 +408,7 @@ plot_correlation(na.omit(orangejuice),type = "continuous",theme_config = list(le
   element_text(angle = 90)))
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/11.png)
+![ ](../img/ExploratoryDataAnalysis/11.png)
 
 
 The corrplot function can also equivalently plot the correlatio between variables in a dataset as shown below:
@@ -424,7 +422,7 @@ pacman::p_load(plotly,corrr,RColorBrewer,corrplot)
 na.omit(orangejuice)%>%select_if(is.numeric)%>%cor()%>%corrplot::corrplot()
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/12.png)
+![ ](../img/ExploratoryDataAnalysis/12.png)
 
 ```r
 #Equivalently
@@ -441,7 +439,7 @@ na.omit(orangejuice)%>%
   heatmap(Rowv = NA, Colv = NA, scale = "column")
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/13.png)
+![ ](../img/ExploratoryDataAnalysis/13.png)
 
 
 An interactive heatmap can be easily plotted courtesy the d3heatmap package. 
@@ -456,7 +454,7 @@ d3heatmap(colors = "Blues", scale = "col",
           dendrogram = "row", k_row = 3)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/heatmap.png)
+![ ](../img/ExploratoryDataAnalysis/heatmap.png)
 
 ```r
 ggsave("/Users/nanaakwasiabayieboateng/Documents/memphisclassesbooks/DataMiningscience/ExploratoryDataAnalysis/d3heatmap.pdf")
@@ -483,7 +481,7 @@ p2<-ggplot(orangejuice, aes(x=SalePriceMM, fill=Purchase)) + geom_bkde(alpha=0.5
 easyGgplot2::ggplot2.multiplot(p1,p2, cols=2)
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/14.png)
+![ ](../img/ExploratoryDataAnalysis/14.png)
 
 The sale price for both purchased Citrus Hill and  Minute Maid Orange Juice is multimodal and the Citrus Hill has a higher sale price.
 
@@ -1150,7 +1148,7 @@ pm<-ggpairs(orangejuice,spec_variable , title = "",mapping = aes(color = Purchas
 pm
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/15.png)
+![ ](../img/ExploratoryDataAnalysis/15.png)
 
 
 We can select one of plots above as follows:
@@ -1159,7 +1157,7 @@ We can select one of plots above as follows:
 pm[1,7]
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/16.png)
+![ ](../img/ExploratoryDataAnalysis/16.png)
 
 
 
@@ -1169,7 +1167,7 @@ na.omit(orangejuice)%>% select_if(~!is.double(.x))%>%
   theme(legend.position = "top")
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/17.png)
+![ ](../img/ExploratoryDataAnalysis/17.png)
 
 ```r
 #Equivalently
@@ -1213,7 +1211,7 @@ ggduo(
   theme(legend.position = "top")
 ```
 
-![ ]( /img/ExploratoryDataAnalysis/18.png)
+![ ](../img/ExploratoryDataAnalysis/18.png)
 
 
 

@@ -21,5 +21,5 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Check HTML links and assets
+      - name: Check site references and blog Markdown
         run: python scripts/check_site.py

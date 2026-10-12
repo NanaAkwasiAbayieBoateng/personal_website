@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hyperparameter Tuning  The Alternating Least-Squares Algorithm for A Recommender System. 
-subtitle: Personalized Recommendation with Matrix Factorization 
+title: Tuning ALS for a recommender system
+subtitle: Hyperparameter tuning for personalized recommendations
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [spark,pyspark,matrix factorization, Alternating Least Squares]
@@ -10,7 +10,7 @@ tags: [spark,pyspark,matrix factorization, Alternating Least Squares]
 
 
 
-### Colaborative Filtering :  Hyperparameter Tuning Alternating Least Squares Algorithm
+### Collaborative filtering: hyperparameter tuning for the alternating least squares algorithm
 
 
 
@@ -900,7 +900,7 @@ The following line creates the alternating least squares model. Then the model i
 
 #### Hyperparameter Tuning
 
-The following parameters in the ALS are to be tuned. The paper Large- Scale Parallel  Colaborative Filtering for the Netflix Price is available on this link [here](https://github.com/tolleiv/thesis/blob/master/Research/Papers/__Zhou08%20-%20Large-scale%20Parallel%20Collaborative%20Filtering%20for%20the%20Netflix%20Prize.pdf). For a detailed explanation of the model, reading through the paper would be appropriate.
+The following ALS parameters can be tuned. The paper *Large-Scale Parallel Collaborative Filtering for the Netflix Prize* is available [here](https://github.com/tolleiv/thesis/blob/master/Research/Papers/__Zhou08%20-%20Large-scale%20Parallel%20Collaborative%20Filtering%20for%20the%20Netflix%20Prize.pdf). It provides a detailed explanation of the model.
 
 **numBlocks** is the number of blocks the users and items will be partitioned into in order to parallelize computation (defaults to 10).
 

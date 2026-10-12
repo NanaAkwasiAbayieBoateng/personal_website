@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Tutorial on Spark in Python Using Pyspark
+title: A tutorial on Spark in Python using PySpark
 subtitle: RDDs and DataFrames
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
@@ -10,15 +10,15 @@ tags: [spark, python, big data,distributed datasets]
 
 
 
-### A Tutorial on Spark in Python Using Pyspark
+### A tutorial on Spark in Python using PySpark
 
 **Introduction**
 
-Apache Spark is a popular open-source distributed querying and processing engine. It provides flexibility and extensibility of MapReduce but at significantly higher speeds.It has quickly become the cluster computing framework for large-scale data processing and machine learning. It's popularity has been spurred on by existing APIs in programming languages such as R, Python, Java and Scala.
-Spark runs on Hadoop, Mesos, standalone, or in the cloud. It can access diverse data sources including HDFS,Cassandra, HBase,NTFS, FAT, or Mac OS Extended (HFS+), and S3.
+Apache Spark is a popular open-source distributed data-processing engine. It offers the flexibility and extensibility of MapReduce at significantly higher speeds. Spark has become a widely used framework for large-scale data processing and machine learning, supported by APIs for R, Python, Java, and Scala.
+Spark runs on Hadoop, Mesos, in standalone mode, or in the cloud. It can access diverse data sources, including HDFS, Cassandra, HBase, NTFS, FAT, Mac OS Extended (HFS+), and Amazon S3.
 Spark frameworks consist of Core Spark, Spark SQL, MLlib and ML for machine learning, GraphX and GraphFrames for graph processing, and Spark Streaming (DStreams and Structured).
-Spark can run run locally on a PC or laptop and can also be deployed on the cloud.It can read and write from a diverse data sources including (but not limited to) HDFS, Apache Cassandra, Apache HBase, and S3:
-Resilient Distributed Datasets(RDDs) apply and log transformations to the data in parallel, resulting in both increased speed and fault-tolerance. RDDs have two sets of parallel operations which are transformations and actions. Data is distributed on spark cluster as RDDs and DataFrames. Spark DataFrames behave similar to table in a relational database such storing data in columns although they are immutably distributed across clusters.
+Spark can run locally on a PC or laptop, or it can be deployed in the cloud. It can read from and write to many data sources, including HDFS, Apache Cassandra, Apache HBase, and S3.
+Resilient Distributed Datasets (RDDs) apply transformations to data in parallel, increasing speed and fault tolerance. RDDs support two kinds of parallel operations: transformations and actions. Spark distributes data across a cluster as RDDs or DataFrames. Spark DataFrames resemble relational database tables, with data organized into columns, and are immutable.
 
 You can check which version of spark you are running by typing 'spark-submit --version' in the terminal
 
@@ -28,7 +28,7 @@ You can check which version of spark you are running by typing 'spark-submit --v
 
 
 
-![ ]( /img/spark1/spark.png)
+![ ](../img/spark1/spark.png)
 
 
 
@@ -1434,4 +1434,3 @@ dataset.select(month(dataset['lpep_dropoff_datetime'])).show(5)
     +----------------------------+
     only showing top 5 rows
     
-

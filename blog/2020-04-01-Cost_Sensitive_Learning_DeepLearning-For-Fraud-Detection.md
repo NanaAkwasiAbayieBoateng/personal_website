@@ -11,8 +11,8 @@ tags: [tensorflow imbalanced classification,ROC-AUC curves,Precision-Recall curv
 
 
 ####  Introduction 
-Data with imbalanced target class occurs frequently in several domians such as credit card  Fraud Detection ,insurance claim prediction, email spam detection, anomaly detection, outlier detection etc. Financial instituions loose millions of dollars every year to fraudulent financial transactions. It is important that these institutions are able to identify fraud to protect their customers and also reduce the financial losses that comes from fraudsters. 
-The goal here is to predict fraudulent transactions to minimize loss to financial companies. For machine learning data with imbalanced target clases, the model evaluation metric is the AUC, the area under the ROC curve and the area under the precision-recall curve. The accuaracy metric is not useful in these situations since usually the proportion of the positive class in these situations is so low that even a naive classifier that predicts  all transactions as fraudulent would result in a high accuracy. For example the dataset considered here, the proportion of negative examples is over 99% this a naive classifier can predict all transactions as legitimate and would be over 99% accuarate.
+Imbalanced target classes are common in domains such as credit-card fraud detection, insurance-claim prediction, email spam detection, and anomaly detection. Financial institutions lose millions of dollars to fraudulent transactions each year. Detecting fraud helps protect customers and reduce financial losses.
+The goal here is to identify fraudulent transactions while minimizing losses. For imbalanced data, useful evaluation metrics include the area under the receiver operating characteristic curve (ROC AUC) and the area under the precision-recall curve. Accuracy alone can be misleading: when more than 99% of the examples are legitimate, a naive classifier that predicts every transaction as legitimate can exceed 99% accuracy without identifying any fraud.
 
 
 
@@ -1100,7 +1100,7 @@ plt.savefig('loss.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_40_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_40_0.png)
 
 
 
@@ -1114,7 +1114,7 @@ plt.savefig('rocauc.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_41_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_41_0.png)
 
 
 
@@ -1128,7 +1128,7 @@ plt.savefig('precision.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_42_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_42_0.png)
 
 
 
@@ -1142,7 +1142,7 @@ plt.savefig('recall.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_43_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_43_0.png)
 
 
 
@@ -1152,7 +1152,7 @@ plot_metrics(weight_history )
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_44_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_44_0.png)
 
 
 
@@ -1163,7 +1163,7 @@ plot_metrics(no_weight_history )
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_45_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_45_0.png)
 
 
 ```python
@@ -1273,7 +1273,7 @@ PlotConfusionMatrix(test_labels,y_pred,y_test_legit,y_test_fraud,label='weight')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_52_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_52_0.png)
 
 
     ---Classification Report---
@@ -1299,7 +1299,7 @@ plt.savefig('cm_noweights.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_53_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_53_0.png)
 
 
     ---Classification Report---
@@ -1436,7 +1436,7 @@ plt.savefig('t_rocauc.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_60_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_60_0.png)
 
 
 #### Plot the Area Under Precision Recall Curve
@@ -1476,7 +1476,7 @@ plt.savefig('all_aupr.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_62_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_62_0.png)
 
 
 ### Sampling Based Approaches
@@ -1634,7 +1634,7 @@ plt.savefig('1_aupr.png')
 
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_71_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_71_0.png)
 
 
 
@@ -1650,7 +1650,7 @@ plt.savefig('1_auc.png')
 ```
 
 
-![png](/img/Cost-sensitive-Deep-Learning/output_72_0.png)
+![png](../img/Cost-sensitive-Deep-Learning/output_72_0.png)
 
 
 Fom this analysis, it appears that cost-sensitive deep learning models outperform other approaches to dealing with class imbalance namely SMOTE, oversampling, undersampling especially if the chosen evaluation metric is the AUC. These proposed methods for addressing class imbalance pays a penalty by sacrificing lower precision values for a higher recall values. The AUC has been criticized for leading to misleading conclusions in evaluating binary models although it is still the most popular evaluation metric for binary classifications model. The area under the precision-recall curve has been suggested an alternative to the AUC in imbalanced classification modeling.

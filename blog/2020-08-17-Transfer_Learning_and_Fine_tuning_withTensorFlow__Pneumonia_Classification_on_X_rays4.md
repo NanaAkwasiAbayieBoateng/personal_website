@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Transfer Learning and Fine-Tuning with TensorFlow
-subtitle:  Application To Pneumonia Classification from X_ray Images
+title: Transfer learning and fine-tuning with TensorFlow
+subtitle: Applying transfer learning to pneumonia classification with X-ray images
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [Image Classification, Deep Learning, Computer Vision,Health AI]
@@ -10,10 +10,10 @@ tags: [Image Classification, Deep Learning, Computer Vision,Health AI]
 
 
 
-Transfer learning involves taking layers/learned features from a model trained on a larger dataset and using those features to initialize training on another similar task. Training deep learning models especially for computer vision requires massive data to perform well. Transfer learning allows models to be trained on smaller dataset by taking advantage of features already learned by a bigger model to initialize training. In Transfer learning, the  layers before the last or some number of layers is usually frozen and last layer modified depending on the number of target classes required in a particular task. Training occurs only on the last or the layers which is not frozen.
+Transfer learning reuses features learned by a model on a large dataset to initialize training on a related task. Computer-vision models often require large datasets, so transfer learning can help when only a smaller dataset is available. Typically, earlier layers are frozen and the final layer is replaced to match the target classes. Training then updates the new layer, or a selected set of unfrozen layers.
 
-One popular model for transfer learning is  the  VGG-16 model trained on the ImageNet dataset. Imagenet is a dataset of over 15 million labeled high-resolution images belonging to roughly 22,000 categories. 
-Fine-tuning which is usually performed to  improve the transfer learning performance involves un-freezing all the layers and  training on them new dataset   with a very small learning rate.
+One popular transfer-learning model is VGG-16, which was trained on the ImageNet dataset. ImageNet contains more than 15 million labeled, high-resolution images across roughly 22,000 categories.
+Fine-tuning can further improve performance by unfreezing some or all of the layers and training them on the new dataset with a small learning rate.
 
 The development version of tensorflow makes a lot of the preprocessing steps in image classification very straight-forward. It can be installed as below:
 
@@ -296,7 +296,7 @@ for i, (images, labels) in enumerate(train_ds.take(9)):
 ```
 
 
-![png]( /img/Pneumonia_Prediction/1.png)
+![png](../img/Pneumonia_Prediction/1.png)
 
 
 Equivalently, we also randomly select some images from the training data to visualize.
@@ -398,7 +398,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image2.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/2.png)
+![png](../img/Pneumonia_Prediction/2.png)
 
 
 Define the numerous metric which would be used to evalaute the model during training and after training. During training the model would be evaluated on the validation set.
@@ -457,7 +457,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image2.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/3.png)
+![png](../img/Pneumonia_Prediction/3.png)
 
 
 The images originally have values that range from [0, 255]. The gradient descent algorithm and its variants used Neural Networks loss minimization algorithms  converge faster when the range of the input features is normalized to a small range. The input features  is scaled to a [0,1] as part of the preprocessing steps.
@@ -570,7 +570,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image4.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/4.png)
+![png](../img/Pneumonia_Prediction/4.png)
 
 
 
@@ -749,7 +749,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image5.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/5.png)
+![png](../img/Pneumonia_Prediction/5.png)
 
 
 
@@ -788,7 +788,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image6.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/6.png)
+![png](../img/Pneumonia_Prediction/6.png)
 
 
 
@@ -869,7 +869,7 @@ PlotConfusionMatrix(test_labels_num,y_pred,y_test_normal,y_test_pneumonia,label=
 
 
 
-![png]( /img/Pneumonia_Prediction/7.png)
+![png](../img/Pneumonia_Prediction/7.png)
 
 
 
@@ -1006,7 +1006,7 @@ plt.savefig("/content/drive/My Drive/Colab Notebooks/ComputerVision/image7.png")
 
 
 
-![png]( /img/Pneumonia_Prediction/8.png)
+![png](../img/Pneumonia_Prediction/8.png)
 
 
     <Figure size 432x288 with 0 Axes>
@@ -1203,5 +1203,4 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint("/content/drive/My Drive/Colab 
 early_stopping_monitor = tf.keras.callbacks.EarlyStopping(patience=30,
                                                      restore_best_weights=True)
 ```
-
 

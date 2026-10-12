@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Returns on Exchange Traded Funds
-subtitle:  performance of some popular ETF's
+title: Returns on exchange-traded funds
+subtitle: Performance of selected exchange-traded funds
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [ETF, Quantitative Finance, Asset Return,quantmod]
@@ -12,9 +12,9 @@ tags: [ETF, Quantitative Finance, Asset Return,quantmod]
 
 #### Exchange Traded Funds
 
-A collection of securities  for example stocks which usually tracks an underlying index  is known as an    Exchange - Traded Fund(ETF). ETF's share some similarity with mutual funds although they are listed on exchanges and their share is traded like stocks throughout the day. ETF's can be made up of various strategies and invest in diverse number of industry sectors.
+A collection of securities, such as stocks, that tracks an underlying index is known as an exchange-traded fund (ETF). Like mutual funds, ETFs can hold a range of investments, but they are listed on exchanges and trade throughout the day. ETFs can follow different strategies and invest across a variety of sectors.
 
-The most popular index tracked by most ETF's is the S&P 500. For example the SPDR S&P 500 ETF (SPY) tracks the S&P 500. ETFs can include different types of investments, including stocks, commodities, bonds, or a mixture of investment types. ETF's  is traded on financial markets as a security with a price at which it can be bought and sold. Most ETF's are set up as Open-end funds meaning  there is no cap on the number of investors allowed in on the product.
+One widely tracked index is the S&P 500; for example, the SPDR S&P 500 ETF (SPY) tracks it. ETFs may hold stocks, commodities, bonds, or a mixture of investments. Their shares trade at market prices and can be bought or sold during trading hours. Many ETFs are open-end funds, which do not cap the number of shares available to investors.
 
 
 
@@ -319,7 +319,7 @@ p1
 
 
 
-<iframe src="/img/ETF/p1.html"
+<iframe src="../img/ETF/p1.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -468,7 +468,7 @@ We now have an xts object, and we have moved from daily prices to monthly prices
 
 Return.calculate(prices_monthly, method = “log”) to convert to returns and save as an object called assed_returns_xts. Note this will give us log returns by the method = “log” argument. We could have used method = “discrete” to get simple returns. The daily percentage  return on a stock is the difference between the previous day's price and the current day's price relative to the previous day's price. The monthly perentage return follows as the difference between the previous month and the current month's price divided by the previous months price.
 
-![ ]( /img/ETF/eqn.PNG)
+![ ](../img/ETF/eqn.PNG)
 
 
 ```r
@@ -701,7 +701,7 @@ gg
 ```
 
 
-<iframe src="/img/ETF/p2.html"
+<iframe src="../img/ETF/p2.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -732,7 +732,7 @@ scale_fill_viridis(discrete=TRUE,option = "D")+
 )+
    labs(y="Mean Yearly Return",x="Year",title="")
 ```
-![ ]( /img/ETF/unnamed-chunk-9-1.png)
+![ ](../img/ETF/unnamed-chunk-9-1.png)
 
 
 ```r
@@ -877,7 +877,7 @@ htmlwidgets::saveWidget(as_widget(gg), "p3.html")
 gg
 ```
 
-<iframe src="/img/ETF/p3.html"
+<iframe src="../img/ETF/p3.html"
     sandbox="allow-same-origin allow-scripts"
     width="100%"
     height="500"
@@ -981,14 +981,13 @@ ETF_returns %>%
    scale_fill_viridis(discrete = T,option="B")
 ```
 
-![ ]( /img/ETF/unnamed-chunk-13-1.png)
+![ ](../img/ETF/unnamed-chunk-13-1.png)
 
 
 
 ```r
    #scale_color_viridis_d() 
 ```
-
 
 
 

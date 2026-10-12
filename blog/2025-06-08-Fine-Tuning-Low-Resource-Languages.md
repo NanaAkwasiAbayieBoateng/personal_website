@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Fine-tuning  and Parameter Efficient Fine-tuning Low Resource Language Models
-subtitle:  An example using Twi Dataset
+title: Fine-tuning and parameter-efficient methods for low-resource language models
+subtitle: An example using a Twi dataset
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [PEFT,LLM, Rogue,BLEU,METEOR, TER,chrF, COMET]
@@ -19,7 +19,7 @@ Fine-tuning large language models (LLMs) for low-resource languages (LRLs) is a 
 
 ### Challenges of Fine-tuning for Low-Resource Languages:
 
-**Data Scarcity:** This is the most significant hurdle. LLMs require vast amounts of text data for pre-training. For LRLs such as twi  data is often unavailable, making it difficult to train models from scratch or fine-tune existing models effectively.
+**Data Scarcity:** This is the most significant hurdle. LLMs require vast amounts of text data for pretraining. For LRLs such as Twi, data is often unavailable, making it difficult to train models from scratch or fine-tune existing models effectively.
 
 **Lack of annotated data:** Even when raw text exists, labeled datasets for specific NLP tasks (e.g., sentiment analysis, named entity recognition, machine translation) are extremely rare.
 **Limited digital presence:** Many LRLs have a predominantly oral tradition or simply haven't been digitized extensively.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Rendering markdown file for github
-subtitle: Finance
+title: Rendering a Markdown document for GitHub
+subtitle: Preparing and rendering R Markdown documents on GitHub
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [test]
@@ -482,8 +482,7 @@ CH
 DT::datatable(orange[1:10, 1:10])
 ```
 
-![ ]( /img/unnamed-chunk-3-1.png)
-
+*Figure unavailable: the original chart image is missing from the media archive.*
 
 
 

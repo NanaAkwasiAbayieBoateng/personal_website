@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Building Recommender System in Spark Using Alternating Least Squares Algorithm 
-subtitle: Personalized Recommendation with Matrix Factorization 
+title: Building a recommender system in Spark with alternating least squares
+subtitle: Personalized recommendations with matrix factorization
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [spark,pyspark,matrix factorization, Alternating Least Squares]
@@ -9,17 +9,13 @@ tags: [spark,pyspark,matrix factorization, Alternating Least Squares]
 
 
 
-#### Building Recommender System in Spark : Alternating Least Squares Algorithm
+#### Building a recommender system in Spark: alternating least squares
 
 
 
-A common challenge  for online companies such as in  retail marketing is that of recommending new products to users in personalized settings (e.g. Amazon's product recommender system, and ebay recom-mendations). Often not only is interest in recommending new products but also recommending products that have been purchased in the past by the shopper and adding a targeted discount coupon with the goal of  increasing sales. A common approach to solving this problem is through matrix factorization, where given the ratings
-that users have given certain items and are tasked with predicting their ratings for the rest of the items. 
+A common challenge for online retailers is recommending products to customers in a personalized way, as services such as Amazon do. Retailers may want to suggest new products or promote products a shopper has purchased before, perhaps with a targeted discount, to increase sales. Matrix factorization is one common approach: given users' ratings for some items, the model predicts their ratings for items they have not yet rated.
 
-This can be formulated as a learning problem in which we are given the ratings
-that users have given certain items and are tasked with predicting their ratings for the rest of the items. A user-item matrix can be constructed as follows:
-Given n users and m items,  an n . m matrix A  in which the
-(u; i)th entry is rui { the rating for item i by user u. The matrix A has many unobserved ratings which is represented as missing ratings.
+Formally, arrange the observed ratings in an n-by-m user-item matrix A, where entry r_ui is the rating for item i given by user u. Most entries are unobserved and are treated as missing values.
 
 
 We load the required packages below.
@@ -1192,5 +1188,3 @@ rmse
 
 
     1.436062196037978
-
-

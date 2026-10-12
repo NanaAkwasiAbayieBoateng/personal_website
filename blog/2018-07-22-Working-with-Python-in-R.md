@@ -1,7 +1,7 @@
 ---
 layout: post
-title: " Working with Python in R"
-subtitle: python + Rstudio
+title: Working with Python in R
+subtitle: Using Python and R together
 #output: rmarkdown::github_document
 
 output:
@@ -23,7 +23,7 @@ tags:  python,reticulate,rstudio
 
 Introduction
 ---------------------------------
-Python and R are the most popular machine learning languages. Jupiter notebooks are the most popular platform for python users to write up and run code. Rmarkdown can also be used for this same purpose. The choice of which of these two largely depends on your goals, interest  and background.Those with a background in statistics overwhemly prefer to work in R wheareas those with computer science background prefer python. Which is better? R or Python is often asked.  Neither one is beter than the other. A third alternative I believe is using both together. The availability of libraries that allows you to work interchangeably between the two languages has made data science officialy agnostic. Examples of these packages include  rPython, PythonInR, reticulate , rJython, SnakeCharmR and XRPython.  
+Python and R are two of the most popular languages for machine learning. Jupyter notebooks are widely used to write and run Python code, while R Markdown serves a similar purpose for R. Choosing between them depends on your goals, interests, and background. People with a background in statistics often prefer R, while those with a computer science background may prefer Python. Neither language is inherently better than the other; another option is to use both. Libraries such as rPython, PythonInR, reticulate, rJython, SnakeCharmR, and XRPython make it possible to work across the two languages.
 
 
 
@@ -43,7 +43,7 @@ The  Python Engine
 This is a  new Python language engine for R Markdown. It  supports bi-directional communication between R and Python (R chunks can access Python objects and vice-versa).
 
 
-![ ]( /img/RPYTHON/pythonengine.png)
+![ ](../img/RPYTHON/pythonengine.png)
 
 ```python
 import csv
@@ -292,7 +292,7 @@ plt.show()
 
 
 
-![ ]( /img/RPYTHON/1.png)
+![ ](../img/RPYTHON/1.png)
 
 We can also plot transfer the data from the Python environment and plot with ggplot as follows:
 
@@ -325,7 +325,7 @@ scale_color_viridis(discrete=TRUE,option = "A")+
 ```
 
 
-![ ]( /img/RPYTHON/2.png)
+![ ](../img/RPYTHON/2.png)
 
 ```r
 df6%>% select(Date,High,Close,Low,Open,Symbol)%>%
@@ -349,7 +349,7 @@ scale_color_viridis(discrete=TRUE,option = "D")+
 
 
 
-![ ]( /img/RPYTHON/3.png)
+![ ](../img/RPYTHON/3.png)
 
 
 
@@ -430,7 +430,7 @@ plt.show()
 
 
 
-![ ]( /img/RPYTHON/4.png)
+![ ](../img/RPYTHON/4.png)
 
 
 
@@ -451,7 +451,7 @@ ggplot(py$employeedata, aes(Age,fill=Attrition)) + geom_histogram(bins = 30)
 
 
 
-![ ]( /img/RPYTHON/6.png)
+![ ](../img/RPYTHON/6.png)
 
 
 #### Sourcing Python scripts
@@ -471,7 +471,7 @@ ggplot(py$employeedata, aes(Age,fill=Attrition)) + geom_histogram(bins = 30)
 ```
 
 
-![ ]( /img/RPYTHON/7.png)
+![ ](../img/RPYTHON/7.png)
 
 #### Python REPL
 The repl_python() function allows switching between Python and R a breeze.First a call is made to repl_python() function , which provides a Python REPL embedded within your R session.Objects created within the Python REPL can be accessed from R using the py object exported from reticulate. The Python and R code can together be run in the R console like the example below.
@@ -499,4 +499,4 @@ The repl_python() function allows switching between Python and R a breeze.First 
 
 
 
-![ ]( /img/RPYTHON/repl_python.png)
+![ ](../img/RPYTHON/repl_python.png)

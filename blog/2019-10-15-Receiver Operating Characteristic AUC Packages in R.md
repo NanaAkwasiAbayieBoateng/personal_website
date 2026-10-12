@@ -1,6 +1,6 @@
 ---
-title: " Receiver Operating Characteristic AUC Packages in R"
-subtitle: Comparison of Varoius Packages
+title: Receiver operating characteristic and AUC packages in R
+subtitle: Comparing packages for ROC and AUC analysis
 #output: rmarkdown::github_document
 
 output:
@@ -20,7 +20,7 @@ tags:  AUC, ROC,Precision-Recall curves,package download library
 ---
 
 
-ROC curves and  AUC values are common evaluation metric for binary classification models. Although there are some criticism of it especially its's appropritatenes in evaluating models built with imbalanced data, they still remain the most popular evaluation metric for binary classification models. In the case of highly imbalanced classification, the area under the precision- recall curve may be an appropriate evaluation metric for comparing models and measuring performance of machine learning models. There are several packages in R for evaluating the area under the ROC curve in R. The pkgsearch can be used to search for packages information on packages for performing a particular task in R  including downloads last month,version,bug reports etc.
+ROC curves and the area under the curve (AUC) are common metrics for evaluating binary classifiers. Although ROC AUC has been criticized, particularly for its suitability with imbalanced data, it remains widely used. For highly imbalanced classification problems, the area under the precision-recall curve may be more appropriate for comparing model performance. Several R packages support ROC and AUC analysis. The `pkgsearch` package can help find packages and review information such as recent downloads and bug reports.
 
 
 
@@ -164,7 +164,7 @@ The graph below illustrates the popularity of some the common packages for findi
 
 
 
-![ ]( /img/ROC_AUC/Capture.PNG)
+![ ](../img/ROC_AUC/Capture.PNG)
 
 
 
@@ -192,7 +192,7 @@ ggplot(downloads, aes(end, downloads, group=package, color=package )) +
 ```
 
 
-![ ]( /img/ROC_AUC/1.png)
+![ ](../img/ROC_AUC/1.png)
 
 
 ```r
@@ -235,7 +235,7 @@ ggplot(downloads, aes(end, downloads, group=package, color=package )) +
 ```
 
 
-![ ]( /img/ROC_AUC/2.png)
+![ ](../img/ROC_AUC/2.png)
 
 
 #### Train Random Forest Model
@@ -324,7 +324,7 @@ ROSE::roc.curve(hacide.test$cls,pred.prob[,2])
 ```
 
 
-![ ]( /img/ROC_AUC/3.png)
+![ ](../img/ROC_AUC/3.png)
 
 ```
 ## Area under the curve (AUC): 0.985
@@ -428,7 +428,7 @@ plot(sens.ci, type="shape", col="lightblue")
 ```
 
 
-![ ]( /img/ROC_AUC/4.png)
+![ ](../img/ROC_AUC/4.png)
 
 ```r
 #plot(sens.ci, type="bars")
@@ -487,7 +487,7 @@ rocplot + style_roc(theme = theme_grey) + geom_rocci(fill="pink")
 ```
 
 
-![ ]( /img/ROC_AUC/5.png)
+![ ](../img/ROC_AUC/5.png)
 
 ```r
 plotROC::calc_auc(rocplot)
@@ -530,7 +530,7 @@ autoplot(precrec_obj)
 ```
 
 
-![ ]( /img/ROC_AUC/6.png)
+![ ](../img/ROC_AUC/6.png)
 
 ```r
 precrec::auc(precrec_obj)
@@ -647,7 +647,7 @@ plot(PRROC::roc.curve(preds_pos, preds_neg, curve = TRUE))
 ```
 
 
-![ ]( /img/ROC_AUC/7.png)
+![ ](../img/ROC_AUC/7.png)
 
 ```r
 PRROC::roc.curve(preds_pos, preds_neg,curve=FALSE)
@@ -704,7 +704,7 @@ ggplot2::autoplot(bnch)
 ```
 
 
-![ ]( /img/ROC_AUC/8.png)
+![ ](../img/ROC_AUC/8.png)
 
 
 
@@ -747,7 +747,7 @@ ggplot2::autoplot(results)
 ```
 
 
-![ ]( /img/ROC_AUC/9.png)
+![ ](../img/ROC_AUC/9.png)
 
 
 
@@ -764,7 +764,7 @@ results %>%
 ```
 
 
-![ ]( /img/ROC_AUC/10.png)
+![ ](../img/ROC_AUC/10.png)
 
 
 

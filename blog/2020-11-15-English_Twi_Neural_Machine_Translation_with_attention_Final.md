@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Neural Machine Translation
-subtitle:  Application To English To Twi  Language Translation
+title: Neural machine translation
+subtitle: Translating English to Twi
 gh-repo: NanaAkwasiAbayieBoateng/NanaAkwasiAbayieBoateng.github.io
 gh-badge: [star, fork, follow]
 tags: [Language Translation, Deep Learning, NLP,Attention Mechanism,seq2seq, encoder-decoder model]
@@ -11,17 +11,12 @@ tags: [Language Translation, Deep Learning, NLP,Attention Mechanism,seq2seq, enc
 
 ### Neural Machine Translation
 
-Machine Translation (MT)
-is the task of translating a sentence x
-from one language (the source language ) to a sentence y in
-another language (the target language).
-Neural Machine Tranlaston(NMT) is a branch of natural language processing that uses deep learning models to predict the likelihood of a sequence of words in translating one language to the other. The development of some alogrithms such as Seq2Seq, Attention, Transformers etc has revolutuonalized the ability of machine learning models to translate text at a very good performance. NMT models represent words as embeddings(numeric vector representation).
+Machine translation (MT) is the task of translating a sentence from a source language into a target language. Neural machine translation (NMT) uses deep-learning models to estimate the likelihood of word sequences in the target language. Methods such as sequence-to-sequence models, attention, and Transformers have improved machine translation. NMT models represent words as embeddings, or numeric vectors.
 
 
-The  NMT network architecture called  sequence to sequence
-(seq2seq )  consist of  two RNNs namely the encoder and decoder networks. The encoder is a bidirectional RNN used to encode a source sentence into a fixed-length vector for a second RNN known as the decoder. The decoder is used to predict words in the target language conditioned on the encoding. The encoder–decoder system is  trained to maximize the probability of a correct translation given a source sentence.
-A draw-back of the encoder-decoder architecture is encoding long inputs into a single vector. 
- The Attention mechanism alleviates  the difficulties faced by RNNs in encoding long inputs into a single vector. The Attention mechanism  allows the decoder to focus on different parts of the input while generating each word of the output.
+The sequence-to-sequence (seq2seq) architecture consists of two recurrent neural networks (RNNs): an encoder and a decoder. The encoder represents a source sentence as a fixed-length vector, and the decoder uses that representation to generate words in the target language. The model is trained to maximize the probability of a correct translation given the source sentence.
+
+A limitation of this architecture is compressing a long input into a single fixed-length vector. Attention helps address this problem by allowing the decoder to focus on different parts of the input while generating each output word.
 
 
 
@@ -1216,7 +1211,7 @@ translate(u' eyi haw me papa . ',actual)
     
 
 
-![png](/img/EnglishToTwiTranslation/output_61_1.png)
+![png](../img/EnglishToTwiTranslation/output_61_1.png)
 
 
 
@@ -1230,7 +1225,7 @@ translate(u' eyi haw me papa . ')
     
 
 
-![png](/img/EnglishToTwiTranslation/output_62_1.png)
+![png](../img/EnglishToTwiTranslation/output_62_1.png)
 
 
     Input: <start> eyi haw me papa . <end>
@@ -1238,7 +1233,7 @@ translate(u' eyi haw me papa . ')
     
 
 
-![png](/img/EnglishToTwiTranslation/output_62_3.png)
+![png](../img/EnglishToTwiTranslation/output_62_3.png)
 
 
 The results from the translation model does not look very good since we are using a very small subest of the dataset. To improve the performance we would need to train on a lot 
